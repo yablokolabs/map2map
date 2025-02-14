@@ -3,76 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map2Map - Google Maps Management Services</title>
+    <title>Map2Map - Google Maps Management</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
             text-align: center;
-            background-color: #f5f5f5; /* Light gray background */
         }
-        .top-left-logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            max-width: 120px;
-            height: auto;
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #008080;
+            padding: 15px 50px;
         }
-        header {
-            background-color: #F8F1E4; /* Creamish */
-            color: #333; /* Dark text */
-            padding: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 0 15px;
         }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?maps,location') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            font-weight: 600;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        /* Main Content Section */
         .content {
-            max-width: 800px;
-            margin: 30px auto;
+            max-width: 900px;
+            margin: 50px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
+
         .content h2 {
-            color: #008080; /* Teal */
+            color: #008080;
+            margin-bottom: 10px;
         }
+
         .content p {
             font-size: 16px;
             line-height: 1.6;
             color: #333;
         }
-        footer {
-            background-color: #F8F1E4;
-            padding: 10px 0;
-            margin-top: 20px;
-            color: #333;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
+
+        .content ul {
+            padding-left: 20px;
         }
+
+        .content ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #008080;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #005f5f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #008080;
+            color: white;
+            padding: 15px;
+            font-size: 14px;
+            position: relative;
+            margin-top: 50px;
+        }
+
         .contact-email {
             position: absolute;
-            bottom: 10px;
             right: 20px;
-            font-size: 14px;
-            color: #008080; /* Teal */
+            bottom: 15px;
+        }
+
+        .contact-email a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <!-- Transparent Logo in Top Left Corner -->
-    <img class="top-left-logo" src="assets/images/logo_transparent.png" alt="Map2Map Logo">
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
 
-    <header>
-        <h1>Google Maps Management Services</h1>
-        <p>Helping Businesses Get Listed & Stay Updated on Google Maps</p>
-    </header>
+    <!-- Hero Section -->
+    <div class="hero">
+        <p>Get Your Business on Google Maps Hassle-Free!</p>
+    </div>
 
     <!-- Content Section -->
     <div class="content">
         <h2>What We Do</h2>
-        <p>Map2Map specializes in managing **Google Maps Listings** for businesses. We help you create, update, and optimize your presence on Google Maps.</p>
+        <p>Map2Map specializes in managing <strong>Google Maps Listings</strong> for businesses. We help you create, update, and optimize your presence on Google Maps.</p>
 
         <h2>Our Services</h2>
         <ul>
@@ -89,11 +160,14 @@
 
         <h2>Get Started Today!</h2>
         <p>Need to list your business or update an existing one? Contact us now and let’s get your business properly set up on <strong>Google Maps!</strong></p>
+
+        <a href="mailto:ceo@map2map.com" class="cta-button">Contact Us</a>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Map2Map. All rights reserved.</p>
-        <p class="contact-email">📧 Contact: <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></p>
+        <p class="contact-email">📧 <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></p>
     </footer>
 
 </body>
