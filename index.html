@@ -4,181 +4,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Map2Map - Google Maps Management</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #008080;
-      --primary-dark: #005f5f;
-      --accent-color: #ffd700;
-      --background-color: #f5f5f5;
-      --text-color: #333;
-      --heading-color: #008080;
+      --primary: #008080;
+      --secondary: #005f5f;
+      --accent: #ffd700;
+      --bg: #f5f5f5;
+      --text: #333;
       --white: #fff;
-      --max-width: 1200px;
     }
-
-    /* Global Reset and Base Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Navigation Bar */
     header {
-      background-color: var(--primary-color);
-      padding: 15px 2%;
+      position: sticky;
+      top: 0;
+      background: var(--primary);
+      padding: 1rem 2%;
+      z-index: 100;
     }
     nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .nav-links a {
+    nav a {
       color: var(--white);
+      margin: 0 1rem;
+      text-decoration: none;
       font-weight: 600;
-      margin: 0 15px;
       transition: color 0.3s ease;
     }
-    .nav-links a:hover {
-      color: var(--accent-color);
+    nav a:hover {
+      color: var(--accent);
     }
-
-    /* Hero Section */
     .hero {
-      position: relative;
-      height: 350px;
+      height: 100vh;
       background: url('https://source.unsplash.com/1600x900/?maps,location') no-repeat center center/cover;
+      position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: var(--text-color);
+      overflow: hidden;
     }
     .hero::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      animation: fadeIn 1.5s ease-out;
     }
-    .hero-logo {
+    .hero-content img {
       max-width: 150px;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
-    .hero p {
-      font-size: 28px;
-      font-weight: 600;
-      text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+      text-shadow: 1px 1px 3px var(--white);
     }
-
-    /* Main Content */
+    .hero-content p {
+      font-size: 1.25rem;
+      color: var(--text);
+      text-shadow: 1px 1px 3px var(--white);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Parallax Section Inspired by Modern Wix Templates */
+    .parallax {
+      background: url('https://source.unsplash.com/1600x900/?tech,modern') no-repeat center center/cover;
+      height: 300px;
+      position: relative;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .parallax h2 {
+      font-size: 2rem;
+    }
     main {
-      max-width: var(--max-width);
-      margin: 50px auto;
-      padding: 20px;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
       background: var(--white);
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    main h2 {
-      color: var(--heading-color);
-      margin-bottom: 10px;
+    section {
+      margin-bottom: 2rem;
     }
-    main p {
-      margin-bottom: 20px;
-      font-size: 16px;
+    section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 2rem;
     }
-    main ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
+    section p,
+    section li {
+      font-size: 1rem;
     }
-    main ul li {
-      font-size: 16px;
-      margin-bottom: 10px;
+    ul {
+      list-style: none;
+      padding-left: 1rem;
     }
-    .cta-button {
+    ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+    .cta {
       display: inline-block;
-      padding: 12px 25px;
-      background-color: var(--primary-color);
+      background: var(--primary);
       color: var(--white);
-      font-size: 18px;
-      font-weight: 600;
+      padding: 0.75rem 1.5rem;
       border-radius: 5px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
-    .cta-button:hover {
-      background-color: var(--primary-dark);
+    .cta:hover {
+      background: var(--secondary);
       transform: translateY(-3px);
     }
-
-    /* Footer */
     footer {
-      background-color: var(--primary-color);
+      background: var(--primary);
       color: var(--white);
-      padding: 15px 2%;
-      position: relative;
+      padding: 1rem 2%;
       text-align: center;
-    }
-    .footer-content {
-      max-width: var(--max-width);
-      margin: 0 auto;
       position: relative;
     }
-    .contact-email {
+    footer .contact {
       position: absolute;
       right: 2%;
-      bottom: 15px;
+      bottom: 0.5rem;
     }
-    .contact-email a {
-      color: var(--accent-color);
+    footer .contact a {
+      color: var(--accent);
+      text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
-    .contact-email a:hover {
-      color: var(--white);
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
       }
-      .nav-links {
-        margin-top: 10px;
+      .hero-content h1 {
+        font-size: 2rem;
       }
-      .contact-email {
-        position: static;
-        margin-top: 10px;
+      .hero-content p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -188,11 +190,12 @@
   <header>
     <nav>
       <div class="logo">
-        <a href="#"><img class="hero-logo" src="assets/images/logo_transparent.png" alt="Map2Map Logo"></a>
+        <a href="#"><img src="assets/images/logo_transparent.png" alt="Map2Map Logo" style="max-width:100px;"></a>
       </div>
-      <div class="nav-links">
+      <div class="menu">
         <a href="#">Home</a>
         <a href="#">Services</a>
+        <a href="#">About</a>
         <a href="#">Contact</a>
       </div>
     </nav>
@@ -201,55 +204,56 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <img class="hero-logo" src="assets/images/logo_transparent.png" alt="Map2Map Logo">
-      <p>Get Your Business on Google Maps Hassle-Free!</p>
+      <img src="assets/images/logo_transparent.png" alt="Map2Map Logo">
+      <h1>Seamless Google Maps Management</h1>
+      <p>Empower Your Business with Enhanced Visibility</p>
     </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax">
+    <h2>Innovative Solutions Inspired by Cool Wix Templates</h2>
   </section>
 
   <!-- Main Content Section -->
   <main>
-    <article>
+    <section>
       <h2>What We Do</h2>
       <p>
-        Map2Map specializes in managing <strong>Google Maps Listings</strong> for businesses.
-        We help you create, update, and optimize your presence on Google Maps.
+        At Map2Map, we specialize in managing and optimizing your Google Maps listings to boost your online presence.
       </p>
-    </article>
+    </section>
 
-    <article>
+    <section>
       <h2>Our Services</h2>
       <ul>
-        <li>📍 <strong>New Google Maps Listings</strong> – Get your business listed on Google Maps</li>
-        <li>✏️ <strong>Update Existing Listings</strong> – Edit business details, hours, and categories</li>
-        <li>🔍 <strong>Fix Incorrect Business Info</strong> – Ensure accurate address & contact details</li>
-        <li>📸 <strong>Add Photos & Descriptions</strong> – Make your listing attractive and informative</li>
+        <li>New Listing Creation</li>
+        <li>Listing Updates & Optimization</li>
+        <li>Accurate Business Info Corrections</li>
+        <li>Visual Enhancements with Photos & Descriptions</li>
       </ul>
-    </article>
+    </section>
 
-    <article>
+    <section>
       <h2>Why Choose Us?</h2>
-      <p>✅ Quick & Hassle-Free Listing Creation</p>
-      <p>✅ Ensure Your Business is Found on Google Maps</p>
-      <p>✅ 100% Accuracy in Business Details</p>
-    </article>
-
-    <article>
-      <h2>Get Started Today!</h2>
       <p>
-        Need to list your business or update an existing one? Contact us now and let’s get your business properly set up on <strong>Google Maps!</strong>
+        Enjoy hassle-free management, quick turnarounds, and guaranteed accuracy in your Google Maps presence.
       </p>
-      <a href="mailto:ceo@map2map.com" class="cta-button">Contact Us</a>
-    </article>
+    </section>
+
+    <section>
+      <h2>Get Started</h2>
+      <p>
+        Ready to elevate your business on Google Maps? Reach out today and let's make it happen.
+      </p>
+      <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Map2Map. All rights reserved.</p>
-      <div class="contact-email">
-        📧 <a href="mailto:ceo@map2map.com">ceo@map2map.com</a>
-      </div>
-    </div>
+    <p>&copy; 2025 Map2Map. All rights reserved.</p>
+    <div class="contact">📧 <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></div>
   </footer>
 </body>
 </html>
