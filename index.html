@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            position: relative;
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2); /* Gradient Background */
+            color: white;
         }
         .top-left-logo {
             position: absolute;
@@ -20,14 +21,28 @@
             height: auto;
         }
         header {
-            background-color: #4CAF50;
+            background: rgba(255, 255, 255, 0.1); /* Transparent effect */
             color: white;
             padding: 20px 0;
+            backdrop-filter: blur(10px); /* Cool blur effect */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            width: 90%;
         }
         footer {
-            background-color: #f1f1f1;
+            background: rgba(255, 255, 255, 0.1);
             padding: 10px 0;
             margin-top: 20px;
+            color: white;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            margin: auto;
+            position: fixed;
+            bottom: 10px;
+            left: 5%;
         }
     </style>
 </head>
