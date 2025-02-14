@@ -10,18 +10,19 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative;
+        }
+        .top-left-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 120px;
+            height: auto;
         }
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 0;
-        }
-        .logo-container {
-            margin: 20px auto;
-        }
-        .logo-container img {
-            max-width: 200px;
-            height: auto;
+            padding: 20px 0;
         }
         footer {
             background-color: #f1f1f1;
@@ -31,23 +32,18 @@
     </style>
 </head>
 <body>
+
+    <!-- Transparent Logo in Top Left Corner -->
+    <img class="top-left-logo" src="assets/images/logo_transparent.png" alt="Map2Map Logo">
+
     <header>
         <h1>Welcome to Map2Map</h1>
         <p>Your Trusted Mapping Service</p>
     </header>
-    
-    <!-- Original Logo -->
-    <div class="logo-container">
-        <img src="assets/images/logo.png" alt="Map2Map Logo">
-    </div>
-
-    <!-- Transparent Logo for Testing -->
-    <div class="logo-container">
-        <img src="assets/images/logo_transparent.png" alt="Transparent Map2Map Logo">
-    </div>
 
     <footer>
         <p>&copy; 2025 Map2Map. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
