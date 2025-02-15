@@ -88,14 +88,14 @@
     }
 
     .hero-content h1 {
-      font-size: 3rem; /* Increased size for better impact */
+      font-size: 3rem;
       margin-bottom: 0.5rem;
       color: var(--text);
       text-shadow: 1px 1px 3px var(--white);
     }
 
     .hero-content p {
-      font-size: 1.5rem; /* Increased size for better readability */
+      font-size: 1.5rem;
       color: var(--text);
       text-shadow: 1px 1px 3px var(--white);
     }
@@ -105,7 +105,6 @@
         opacity: 0;
         transform: translateY(20px);
       }
-      
       to {
         opacity: 1;
         transform: translateY(0);
@@ -113,187 +112,186 @@
     }
 
     .parallax {
-      background-image:url('https://source.unsplash.com/1600x900/?tech,modern');
-      height: 300px; 
-	  position:absolute; 
-	  top:-50px; 
-	  left:-50%; 
-	  right:-50%; 
-	  z-index:-1; 
-	  background-attachment :fixed; 
-	  background-size :cover; 
-	  display:flex; 
-	  align-items:center; 
-	  justify-content:center; 
-	  color:white; 
-	  text-shadow :2px 2px rgba(0,0,0,0.7); 
-	}
+      background-image: url('https://source.unsplash.com/1600x900/?tech,modern');
+      height: 300px;
+      background-attachment: fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-shadow: 2px 2px rgba(0,0,0,0.7);
+      margin: 2rem 0;
+    }
 
-	.parallax h2 { 
-		font-size :2rem; 
-	}
+    .parallax h2 {
+      font-size: 2rem;
+    }
 
-	main {
-		max-width :1200px; 
-		margin :3rem auto; 
-		padding :2rem; 
-		background :var(--white); 
-		border-radius :10px; 
-		box-shadow :0 4px 12px rgba(0,0,0,0.1); 
-	}
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-	section { 
-		margin-bottom :2rem; 
-	}
+    section {
+      margin-bottom: 2rem;
+    }
 
-	section h2 { 
-		color :var(--primary); 
-		margin-bottom :1rem; 
-		font-size :2rem; 
-	}
+    section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
 
-	section p,
-	section li { 
-		font-size :1rem; 
-	}
+    section p,
+    section li {
+      font-size: 1rem;
+    }
 
-	ul { 
-		list-style :none; 
-		padding-left :1rem; 
-	}
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
 
-	ul li::before { 
-		content :"• "; 
-		color :var(--accent); 
-	}
+    ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
 
-	.cta { 
-		display:inline-block;  
-        background :var(--primary);  
-        color :var(--white);  
-        padding :1rem ; /* Increased padding for better touch area */  
-        border-radius :5px;  
-        font-size :1.125rem;  
-        font-weight :600;  
-        margin-top :1rem;  
-        transition :background .3s ease ,transform .3s ease ,box-shadow .3s ease ;  
-        box-shadow :0px -4px rgba(255,255,255,.4) ; /* Added shadow for depth */  
-     }  
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px -4px rgba(255,255,255,0.4);
+    }
 
-     .cta:hover {  
-        background :var(--secondary);  
-        transform :translateY(-3px);  
-        box-shadow :0px -6px rgba(255,255,255,.6) ; /* Enhanced shadow on hover */  
-     }  
+    .cta:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0px -6px rgba(255,255,255,0.6);
+    }
 
-     footer {  
-        background :var(--primary);  
-        color :var(--white);  
-        padding :1rem ;  
-        text-align:center ;  
-     }  
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem;
+      text-align: center;
+    }
 
-     footer .contact {  
-        margin-top:.5rem ; /* Adjusted margin for better spacing */  
-     }  
+    footer .contact {
+      margin-top: 0.5rem;
+    }
 
-     footer .contact a {  
-        color :var(--accent);  
-        text-decoration:none ;  
-        font-weight:bold ;  
-     }  
+    footer .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-     @media (max-width :768px) {  
-         nav {   
-            flex-direction :column ;   
-         }  
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
 
-         .hero-content h1 {   
-            font-size :2rem ;   
-         }  
+      .hero-content h1 {
+        font-size: 2rem;
+      }
 
-         .hero-content p {   
-            font-size :1rem ;   
-         }  
+      .hero-content p {
+        font-size: 1rem;
+      }
 
-         main {   
-            padding :.5rem ; /* Reduced padding for smaller screens */   
-         }  
+      main {
+        padding: 0.5rem;
+      }
 
-         section h2 {   
-            font-size :1.5rem ;   
-         }  
+      section h2 {
+        font-size: 1.5rem;
+      }
 
-         section p , section li {   
-            font-size :.9rem ;   
-         }  
+      section p, section li {
+        font-size: 0.9rem;
+      }
 
-         .cta {   
-            padding :.5rem ; /* Reduced padding for smaller screens */   
-         }  
-     }  
-   </style>
+      .cta {
+        padding: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<!-- Header / Navigation -->
-<header>
-<nav>
-<div class="logo">
-<a href="#"><img src="assets/images/logo_transparent.png" alt="Map2Map Logo" style="max-width:100px;"></a>
-</div>
-<div class="menu">
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</div>
-</nav>
-</header>
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="assets/images/logo_transparent.png" alt="Map2Map Logo" style="max-width:100px;"></a>
+      </div>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<!-- Hero Section -->
-<section class="hero">
-<div class="hero-content">
-<img src="assets/images/logo_transparent.png" alt="Map2Map Logo">
-<h1>Seamless Google Maps Management</h1>
-<p>Empower Your Business with Enhanced Visibility</p>
-</div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="assets/images/logo_transparent.png" alt="Map2Map Logo">
+      <h1>Seamless Google Maps Management</h1>
+      <p>Empower Your Business with Enhanced Visibility</p>
+    </div>
+  </section>
 
-<!-- Main Content Section -->
-<main>
-<section>
-<h2>What We Do</h2>
-<p>At Map2Map, we specialize in managing and optimizing your Google Maps listings to boost your online presence.</p>
-</section>
+  <!-- Parallax Section -->
+  <section class="parallax">
+    <h2>Experience the Future of Maps</h2>
+  </section>
 
-<section>
-<h2>Our Services</h2>
-<ul>
-<li>New Listing Creation</li>
-<li>Listing Updates & Optimization</li>
-<li>Accurate Business Info Corrections</li>
-<li>Visual Enhancements with Photos & Descriptions</li>
-</ul>
-</section>
+  <!-- Main Content Section -->
+  <main>
+    <section>
+      <h2>What We Do</h2>
+      <p>At Map2Map, we specialize in managing and optimizing your Google Maps listings to boost your online presence.</p>
+    </section>
 
-<section>
-<h2>Why Choose Us?</h2>
-<p>Enjoy hassle-free management, quick turnarounds, and guaranteed accuracy in your Google Maps presence.</p>
-</section>
+    <section>
+      <h2>Our Services</h2>
+      <ul>
+        <li>New Listing Creation</li>
+        <li>Listing Updates & Optimization</li>
+        <li>Accurate Business Info Corrections</li>
+        <li>Visual Enhancements with Photos & Descriptions</li>
+      </ul>
+    </section>
 
-<section>
-<h2>Get Started</h2>
-<p>Ready to elevate your business on Google Maps? Reach out today and let's make it happen.</p>
-<a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
-</section>
-</main>
+    <section>
+      <h2>Why Choose Us?</h2>
+      <p>Enjoy hassle-free management, quick turnarounds, and guaranteed accuracy in your Google Maps presence.</p>
+    </section>
 
-<!-- Footer -->
-<footer>
-<p>&copy; 2025 Map2Map. All rights reserved.</p>
-<div class="contact">📧 <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></div>
-</footer>
+    <section>
+      <h2>Get Started</h2>
+      <p>Ready to elevate your business on Google Maps? Reach out today and let's make it happen.</p>
+      <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Map2Map. All rights reserved.</p>
+    <div class="contact">📧 <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></div>
+  </footer>
 </body>
 </html>
-
