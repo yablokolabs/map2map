@@ -94,22 +94,27 @@
       font-size: 1.5rem;
     }
 
-    .cta {
-      display: inline-block;
-      background: var(--primary);
-      color: #000;
-      padding: 1rem 2rem;
-      border-radius: 5px;
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
+    main {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: var(--glass);
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px var(--shadow);
     }
 
-    .cta:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0px -6px rgba(255,255,255,0.6);
+    section h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--glass);
+      padding: 1rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
     }
   </style>
 </head>
@@ -134,5 +139,21 @@
       <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
     </div>
   </section>
+
+  <main>
+    <section>
+      <h2>What We Do</h2>
+      <ul>
+        <li>New Listing Creation</li>
+        <li>Listing Updates & Optimization</li>
+        <li>Accurate Business Info Corrections</li>
+        <li>Visual Enhancements with Photos & Descriptions</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Map2Map. All rights reserved.</p>
+  </footer>
 </body>
 </html>
