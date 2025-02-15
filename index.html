@@ -121,30 +121,24 @@
       margin-bottom: 1rem;
     }
 
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
     footer {
       background: var(--glass);
       padding: 1rem;
       text-align: center;
       backdrop-filter: blur(10px);
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="#"><img src="assets/images/logo_transparent.png" alt="Map2Map Logo" style="max-width:100px;"></a>
-    </div>
     <nav>
       <a href="#">Home</a>
       <a href="#">Services</a>
@@ -157,18 +151,24 @@
     <div class="hero-content">
       <h1>Seamless Google Maps Management</h1>
       <p>Empower Your Business with Enhanced Visibility</p>
-      <a class="cta" href="mailto:ceo@map2map.com">Get Started</a>
+      <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
     </div>
   </section>
 
   <main>
     <section>
       <h2>What We Do</h2>
-      <p>At Map2Map, we optimize your Google Maps listings for maximum visibility.</p>
+      <ul>
+        <li>New Listing Creation</li>
+        <li>Listing Updates & Optimization</li>
+        <li>Accurate Business Info Corrections</li>
+        <li>Visual Enhancements with Photos & Descriptions</li>
+      </ul>
     </section>
   </main>
 
   <footer>
+    <p>Contact us: <a href="mailto:ceo@map2map.com">ceo@map2map.com</a></p>
     <p>&copy; 2025 Map2Map. All rights reserved.</p>
   </footer>
 </body>
