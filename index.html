@@ -76,6 +76,7 @@
       font-weight: 600;
       transition: color 0.3s ease, transform 0.3s ease;
       position: relative;
+      cursor: pointer;
     }
 
     nav a::after {
@@ -171,7 +172,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .cta {
+    .cta, .learn-more {
       display: inline-block;
       padding: 0.75rem 1.5rem;
       background: var(--primary);
@@ -180,9 +181,12 @@
       text-decoration: none;
       font-weight: 700;
       transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border: none;
+      margin: 0.5rem;
     }
 
-    .cta:hover {
+    .cta:hover, .learn-more:hover {
       background: var(--accent);
       transform: translateY(-3px);
     }
@@ -291,10 +295,10 @@
       <a href="#"><img src="assets/images/logo_transparent.png" alt="Map2Map Logo"></a>
     </div>
     <nav id="navbar">
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#" onclick="navigateHome()">Home</a>
+      <a href="#" onclick="navigateServices()">Services</a>
+      <a href="#" onclick="navigateAbout()">About</a>
+      <a href="#" onclick="navigateContact()">Contact</a>
     </nav>
     <div class="hamburger" id="hamburger">
       <span></span>
@@ -309,6 +313,7 @@
       <h1>Seamless Google Maps Management</h1>
       <p>Empower Your Business with Enhanced Visibility</p>
       <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
+      <button type="button" class="learn-more" onclick="showMoreInfo()">Learn More</button>
     </div>
   </section>
 
@@ -345,6 +350,33 @@
         header.classList.remove('scrolled');
       }
     });
+
+    // Navigation functions
+    function navigateHome() {
+      // Add navigation logic here, e.g., scroll to top or change content
+      alert("Navigating to Home");
+    }
+
+    function navigateServices() {
+      // Add navigation logic here
+      alert("Navigating to Services");
+    }
+
+    function navigateAbout() {
+      // Add navigation logic here
+      alert("Navigating to About");
+    }
+
+    function navigateContact() {
+      // Add navigation logic here
+      alert("Navigating to Contact");
+    }
+
+    // Additional button functions
+    function showMoreInfo() {
+      // Add logic to show more information
+      alert("Showing more information");
+    }
   </script>
 </body>
 </html>
