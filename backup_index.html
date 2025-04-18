@@ -116,13 +116,15 @@
     }
 
     .hero {
-      background: linear-gradient(rgba(0, 40, 70, 0.8), rgba(0, 40, 70, 0.8)), url('assets/images/hero-background.jpg') no-repeat center center/cover;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 221, 64, 0.1)), url('assets/images/hero-background.jpg') no-repeat center center/cover;
+      flex-direction: column;
       position: relative;
+      overflow: hidden;
     }
 
     .hero::before {
@@ -138,92 +140,55 @@
     }
 
     .hero-content {
-      max-width: 800px;
-      padding: 2rem;
+      backdrop-filter: blur(20px);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      background: var(--glass);
+      box-shadow: 0 4px 25px var(--shadow);
       z-index: 2;
+      animation: fadeIn 2s ease-out;
+      max-width: 600px;
+    }
+
+    .hero-content img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-content img:hover {
+      transform: rotate(5deg) scale(1.05);
     }
 
     .hero-content h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      color: white;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      animation: slideIn 1s ease-out;
     }
 
     .hero-content p {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: white;
-      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
-    .cta {
+    .cta, .learn-more {
       display: inline-block;
-      padding: 1rem 2rem;
-      background: var(--accent);
-      color: #000;
-      font-weight: 700;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: #fff;
       border-radius: 50px;
       text-decoration: none;
-      transition: transform 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: 700;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      border: none;
+      margin: 0.5rem;
     }
 
-    .cta:hover {
+    .cta:hover, .learn-more:hover {
+      background: var(--accent);
       transform: translateY(-3px);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      padding: 4rem 2rem;
-    }
-
-    .service-card {
-      background: var(--secondary);
-      padding: 2rem;
-      border-radius: 15px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .service-card i {
-      font-size: 2.5rem;
-      color: white;
-      margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-      color: white;
-      font-size: 1.2rem;
-      line-height: 1.4;
-    }
-
-    .cta-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--secondary);
-      border-radius: 15px;
-      margin: 4rem 0;
-    }
-
-    .cta-section h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: white;
-    }
-
-    .cta-section p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: white;
     }
 
     main {
@@ -310,24 +275,6 @@
       .hamburger {
         display: flex;
       }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .hero-content h1 {
-        font-size: 3rem;
-      }
-      
-      .hero-content p {
-        font-size: 1.2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     /* Animations */
@@ -362,38 +309,23 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Google Maps<br>Management Service</h1>
-      <p>Boost your visibility with expert management and<br>optimization of your Google Maps listing.</p>
-      <a href="#" class="cta">FIX MY LISTING NOW</a>
+      <img src="assets/images/logo_transparent.png" alt="Map2Map Logo">
+      <h1>Seamless Google Maps Management</h1>
+      <p>Empower Your Business with Enhanced Visibility</p>
+      <a class="cta" href="mailto:ceo@map2map.com">Contact Us</a>
+      <button type="button" class="learn-more" onclick="showMoreInfo()">Learn More</button>
     </div>
   </section>
 
   <main>
-    <section class="services">
-      <div class="service-grid">
-        <div class="service-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>New Listing<br>Creation</h3>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-sync-alt"></i>
-          <h3>Listing<br>Updates &<br>Optimization</h3>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-clipboard-check"></i>
-          <h3>Accurate<br>Business info<br>Corrections</h3>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-images"></i>
-          <h3>Visual<br>Enhancements</h3>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <h2>Not seeing results on Google Maps?</h2>
-      <p>Let us help you fix that.</p>
-      <a href="#" class="cta">START FREE CONSULTATION</a>
+    <section>
+      <h2>What We Do</h2>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i><br>New Listing Creation</li>
+        <li><i class="fas fa-edit"></i><br>Listing Updates & Optimization</li>
+        <li><i class="fas fa-info-circle"></i><br>Accurate Business Info Corrections</li>
+        <li><i class="fas fa-camera"></i><br>Visual Enhancements with Photos & Descriptions</li>
+      </ul>
     </section>
   </main>
 
