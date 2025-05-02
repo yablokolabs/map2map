@@ -37,6 +37,9 @@
 
         header {
             padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -50,6 +53,18 @@
 
         .logo i {
             color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .pricing-header {
@@ -183,8 +198,15 @@
         <header>
             <div class="logo">
                 <i class="fas fa-map-marker-alt"></i>
-                MAP2MAP
+                <a href="index.html" style="text-decoration: none; color: var(--primary);">MAP2MAP</a>
             </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </header>
 
         <div class="pricing-header">
