@@ -9,11 +9,11 @@
   <style>
     :root {
       --primary: #003B5C;
-      --secondary: #0A4B7C;
+      --secondary: #0077b6;
       --accent: #FFD700;
-      --bg: #003B5C;
-      --text: #FFFFFF;
-      --card-bg: #0A4B7C;
+      --bg: #F0F8FF;
+      --text: #003B5C;
+      --white: #FFFFFF;
       --font-primary: 'Inter', sans-serif;
     }
 
@@ -30,22 +30,30 @@
       line-height: 1.6;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1.5rem 5%;
+      padding: 2rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .logo i {
+      color: var(--primary);
     }
 
     nav {
@@ -54,7 +62,7 @@
     }
 
     nav a {
-      color: var(--text);
+      color: var(--primary);
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: 500;
@@ -77,12 +85,14 @@
       font-weight: 700;
       margin-bottom: 1.5rem;
       max-width: 800px;
+      color: var(--white);
     }
 
     .hero p {
       font-size: 1.5rem;
       margin-bottom: 2.5rem;
       max-width: 800px;
+      color: var(--white);
     }
 
     .cta-button {
@@ -95,6 +105,11 @@
       font-weight: 600;
       font-size: 1.1rem;
       text-transform: uppercase;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
     }
 
     .services {
@@ -106,9 +121,10 @@
     }
 
     .service-card {
-      background: var(--card-bg);
+      background: var(--white);
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -135,10 +151,11 @@
       font-size: 1.2rem;
       margin-bottom: 1rem;
       line-height: 1.4;
+      color: var(--primary);
     }
 
     .cta-section {
-      background: var(--bg);
+      background: var(--primary);
       padding: 4rem 5%;
       text-align: center;
     }
@@ -146,11 +163,13 @@
     .cta-section h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      color: var(--white);
     }
 
     .cta-section p {
       font-size: 1.5rem;
       margin-bottom: 2rem;
+      color: var(--white);
     }
 
     @media (max-width: 768px) {
@@ -165,6 +184,10 @@
       .services {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
     }
 
     @media (max-width: 480px) {
@@ -175,54 +198,59 @@
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo">Map2Map</a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Google Maps Management Service</h1>
-    <p>Boost your visibility with expert management and optimization of your Google Maps listing.</p>
-    <a href="contact.html" class="cta-button">Fix my listing now</a>
-  </section>
-
-  <section class="services">
-    <div class="service-card">
-      <div class="service-icon">
+  <div class="container">
+    <header>
+      <div class="logo">
         <i class="fas fa-map-marker-alt"></i>
+        <a href="index.html" style="text-decoration: none; color: var(--primary);">MAP2MAP</a>
       </div>
-      <h3>New Listing Creation</h3>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i class="fas fa-sync-alt"></i>
-      </div>
-      <h3>Listing Updates & Optimization</h3>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i class="fas fa-clipboard-check"></i>
-      </div>
-      <h3>Accurate Business info Corrections</h3>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <i class="fas fa-images"></i>
-      </div>
-      <h3>Visual Enhancements</h3>
-    </div>
-  </section>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <section class="cta-section">
-    <h2>Not seeing results on Google Maps?</h2>
-    <p>Let us help you fix that.</p>
-    <a href="mailto:sales@map2map.com" class="cta-button">Start Free Consultation</a>
-  </section>
+    <section class="hero">
+      <h1>Google Maps Management Service</h1>
+      <p>Boost your visibility with expert management and optimization of your Google Maps listing.</p>
+      <a href="contact.html" class="cta-button">Fix my listing now</a>
+    </section>
+
+    <section class="services">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3>New Listing Creation</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <h3>Listing Updates & Optimization</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3>Accurate Business info Corrections</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-images"></i>
+        </div>
+        <h3>Visual Enhancements</h3>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Not seeing results on Google Maps?</h2>
+      <p>Let us help you fix that.</p>
+      <a href="contact.html" class="cta-button">Start Free Consultation</a>
+    </section>
+  </div>
 </body>
 </html>
