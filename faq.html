@@ -97,27 +97,33 @@
         }
 
         .contact-section {
+            background: var(--primary);
+            padding: 4rem 0;
             text-align: center;
-            margin-top: 4rem;
-            padding-top: 4rem;
-            border-top: 1px solid rgba(0, 59, 92, 0.1);
+            border-radius: 15px;
+            margin: 4rem 0;
         }
 
         .contact-section h2 {
             font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+            color: var(--white);
+            margin-bottom: 2rem;
         }
 
         .contact-email {
-            font-size: 2rem;
-            color: #0077b6;
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
         }
 
         .contact-email:hover {
-            color: var(--secondary);
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
