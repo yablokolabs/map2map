@@ -56,16 +56,18 @@
       color: var(--primary);
     }
 
-    nav {
-      display: flex;
-      gap: 2rem;
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
     }
 
-    nav a {
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
+    .nav-links {
+      display: flex;
+      gap: 2rem;
     }
 
     .hero {
@@ -172,6 +174,25 @@
     }
 
     @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
       .hero h1 {
         font-size: 2.5rem;
       }
@@ -212,7 +233,10 @@
         <i class="fas fa-map-marker-alt"></i>
         <a href="index.html" style="text-decoration: none; color: var(--primary);">MAP2MAP™</a>
       </div>
-      <nav>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html">Pricing</a>
@@ -264,5 +288,11 @@
       © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
