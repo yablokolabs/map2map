@@ -37,6 +37,9 @@
 
         header {
             padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -54,19 +57,14 @@
 
         nav {
             display: flex;
-            align-items: center;
             gap: 2rem;
         }
 
         nav a {
-            color: var(--text);
+            color: var(--primary);
             text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
         }
 
         h1 {
@@ -170,14 +168,14 @@
         <header>
             <div class="logo">
                 <i class="fas fa-map-marker-alt"></i>
-                MAP2MAP
+                <a href="index.html" style="text-decoration: none; color: var(--primary);">MAP2MAP</a>
             </div>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="mailto:sales@map2map.com">Contact</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
@@ -219,7 +217,7 @@
 
         <div class="cta-section">
             <h2>LET'S GET YOU LISTED</h2>
-            <a href="mailto:sales@map2map.com" class="cta-button">Book a Free Consultation</a>
+            <a href="contact.html" class="cta-button">Book a Free Consultation</a>
         </div>
     </div>
 </body>
