@@ -1,383 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing - Map2Map™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon Links -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="alternate icon" href="favicon.png" type="image/png">
-    
-    <style>
-        :root {
-            --primary: #003B5C;
-            --secondary: #0077b6;
-            --accent: #FFD700;
-            --bg: #F0F8FF;
-            --text: #003B5C;
-            --white: #FFFFFF;
-            --font-primary: 'Inter', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - Map2Map™</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="alternate icon" href="favicon.png" type="image/png">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --primary: #003B5C;
+      --secondary: #0077b6;
+      --accent: #FFD700;
+      --bg: #F0F8FF;
+      --text: #003B5C;
+      --white: #FFFFFF;
+      --font-primary: 'Inter', sans-serif;
+    }
 
-        body {
-            font-family: var(--font-primary);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    body {
+      font-family: var(--font-primary);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        header {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
+    header {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .logo i {
-            color: var(--primary);
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
 
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
 
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
 
-        .pricing-header {
-            text-align: center;
-            margin: 4rem 0;
-        }
+    .pricing-header {
+      text-align: center;
+      margin: 4rem 0;
+    }
 
-        h1 {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
+    h1 {
+      font-size: 4rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text);
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--text);
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .pricing-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .pricing-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem auto;
+    }
 
-        .pricing-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+    .pricing-card {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-        .package-name {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
+    .package-name {
+      font-size: 1.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-        .price {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
+    .price {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-        .features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
+    .features {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+      text-align: left;
+      width: 100%;
+    }
 
-        .features li {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .features li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
 
-        .features li::before {
-            content: "•";
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
-        .note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
-        }
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--accent);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: auto;
+      transition: background 0.3s ease;
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease;
-        }
+    .cta-button:hover {
+      background: #f5c400;
+    }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
+    .note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
 
-        .why-section {
-            text-align: center;
-            margin: 4rem 0;
-        }
+    .why-section {
+      text-align: center;
+      margin: 4rem 0;
+    }
 
-        .why-section h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-        }
+    .why-section h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
 
-        .why-section ul {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .why-section ul {
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .why-section li {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
+    .why-section li {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(0, 59, 92, 0.1);
+    }
 
-            .subtitle {
-                font-size: 1.2rem;
-            }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
 
-            .pricing-card {
-                padding: 2rem;
-            }
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
 
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            color: var(--text);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(0, 59, 92, 0.1);
-        }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
 
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
+      .subtitle {
+        font-size: 1.2rem;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+      .pricing-card {
+        width: 100%;
+      }
 
-        .nav-links.active {
-            display: flex;
-        }
+      .hamburger {
+        display: block;
+      }
 
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        padding: 1rem;
+      }
 
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: var(--bg);
-                padding: 1rem;
-            }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
 
-            .nav-links.active {
-                display: flex;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-map-marker-alt"></i>
-                <a href="index.html" style="text-decoration: none; color: var(--primary);">Map2Map™</a>
-            </div>
-            <button class="hamburger" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <i class="fas fa-map-marker-alt"></i>
+        <a href="index.html" style="text-decoration: none; color: var(--primary);">Map2Map™</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-        <div class="pricing-header">
-            <h1>Simple Pricing</h1>
-            <p class="subtitle">Transparent, One-time setup. Pay only when you need updates.</p>
-        </div>
-
-        <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
-            <thead>
-                <tr>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Package</th>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Price</th>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Features</th>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Starter Package</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <span style="text-decoration: line-through;">₹2,999</span> ₹1,999 <br>
-                        <strong>Save ₹200!</strong>
-                    </td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <ul>
-                            <li>Google Business Profile Setup (1 Location)</li>
-                            <li>Optimize Your Business Listing Category</li>
-                            <li>Photos & Description</li>
-                            <li>Verification Support</li>
-                        </ul>
-                    </td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <a href="contact.html" class="cta-button">Get Started Now</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Update Service</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">5 updates for ₹450</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <ul>
-                            <li>Business Hours</li>
-                            <li>Phone Number</li>
-                            <li>Location Pin</li>
-                            <li>Website</li>
-                            <li>Photos</li>
-                        </ul>
-                        <p class="note">Note: Additional locations cost more.</p>
-                    </td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <a href="contact.html" class="cta-button">Get Updates</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Mid-Tier Package</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">₹3,499</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <ul>
-                            <li>All Starter Features</li>
-                            <li>Extra Support</li>
-                        </ul>
-                    </td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <a href="contact.html" class="cta-button">Choose Mid-Tier</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Premium Package <span style="color: var(--accent);">Most Popular</span></td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">₹4,999</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <ul>
-                            <li>All Mid-Tier Features</li>
-                            <li>Ongoing Support</li>
-                            <li>Advanced Optimization</li>
-                        </ul>
-                    </td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">
-                        <a href="contact.html" class="cta-button">Upgrade to Premium</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p style="color: red;">Limited time offer: 10% off the Starter Package until June 2025!</p>
-        <p style="font-weight: bold;">100% Money-Back Guarantee if Not Satisfied Within 30 Days!</p>
-
-        <div class="why-section">
-            <h2>Why We Charge This Way</h2>
-            <ul>
-                <li>No monthly subscriptions</li>
-                <li>You pay only for real changes</li>
-                <li>Designed to help small businesses grow affordably</li>
-            </ul>
-        </div>
-
-        <footer>
-            © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
-        </footer>
+    <div class="pricing-header">
+      <h1>Simple Pricing</h1>
+      <p class="subtitle">Transparent, One-time setup. Pay only when you need updates.</p>
     </div>
-    <script>
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
-    <!-- Start of Tawk.to Script -->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/681e0c3d9b96651916dbab23/1iqqlvk5k';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-    <!-- End of Tawk.to Script -->
+
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="package-name">Starter Package</div>
+        <div class="price">
+          <span style="text-decoration: line-through; font-size: 1rem;">₹2,999</span><br>
+          ₹1,999 <br>
+          <span style="color: green; font-size: 0.9rem;">Save ₹200!</span>
+        </div>
+        <ul class="features">
+          <li>Google Business Profile Setup (1 Location)</li>
+          <li>Optimize Your Business Listing Category</li>
+          <li>Photos & Description</li>
+          <li>Verification Support</li>
+        </ul>
+        <a href="contact.html" class="cta-button">Get Started Now</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="package-name">Update Service</div>
+        <div class="price">5 updates for ₹450</div>
+        <ul class="features">
+          <li>Business Hours</li>
+          <li>Phone Number</li>
+          <li>Location Pin</li>
+          <li>Website</li>
+          <li>Photos</li>
+        </ul>
+        <p class="note">Note: Additional locations cost more.</p>
+        <a href="contact.html" class="cta-button">Get Updates</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="package-name">Mid-Tier Package</div>
+        <div class="price">₹3,499</div>
+        <ul class="features">
+          <li>All Starter Features</li>
+          <li>Extra Support</li>
+        </ul>
+        <a href="contact.html" class="cta-button">Choose Mid-Tier</a>
+      </div>
+
+      <div class="pricing-card" style="border: 2px solid var(--accent); box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
+        <div class="package-name">Premium Package <span style="color: var(--accent); font-size: 0.9rem;">Most Popular</span></div>
+        <div class="price">₹4,999</div>
+        <ul class="features">
+          <li>All Mid-Tier Features</li>
+          <li>Ongoing Support</li>
+          <li>Advanced Optimization</li>
+        </ul>
+        <a href="contact.html" class="cta-button">Upgrade to Premium</a>
+      </div>
+    </div>
+
+    <p style="color: red; text-align: center;">Limited time offer: 10% off the Starter Package until June 2025!</p>
+    <p style="font-weight: bold; text-align: center;">100% Money-Back Guarantee if Not Satisfied Within 30 Days!</p>
+
+    <div class="why-section">
+      <h2>Why We Charge This Way</h2>
+      <ul>
+        <li>No monthly subscriptions</li>
+        <li>You pay only for real changes</li>
+        <li>Designed to help small businesses grow affordably</li>
+      </ul>
+    </div>
+
+    <footer>
+      © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/681e0c3d9b96651916dbab23/1iqqlvk5k';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 </body>
-</html> 
+</html>
