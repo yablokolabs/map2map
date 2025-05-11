@@ -8,14 +8,14 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="alternate icon" href="favicon.png" type="image/png">
 
-  <style>
+    <style>
     :root {
-      --primary: #6772e5; /* Primary color */
-      --secondary: #f6f9fc; /* Light background */
-      --accent: #00bfff; /* Accent color */
-      --text: #333; /* Text color */
-      --white: #ffffff; /* White color */
-      --font-primary: 'Inter', sans-serif; /* Font family */
+      --primary: #6772e5;
+      --secondary: #f6f9fc;
+      --accent: #00bfff;
+      --text: #333;
+      --white: #ffffff;
+      --font-primary: 'Inter', sans-serif;
     }
 
     * {
@@ -95,6 +95,21 @@
       color: var(--white);
     }
 
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      color: var(--white);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      max-width: 800px;
+      color: var(--white);
+    }
+
     .cta-button {
       display: inline-block;
       padding: 1rem 2rem;
@@ -104,12 +119,135 @@
       border-radius: 50px;
       font-weight: 600;
       font-size: 1.1rem;
+      text-transform: uppercase;
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .cta-button:hover {
       background: #0056b3;
       transform: translateY(-3px);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 4rem 5%;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: var(--primary);
+    }
+
+    .cta-section {
+      background: var(--primary);
+      padding: 4rem 5%;
+      text-align: center;
+      border-radius: 15px;
+    }
+
+    .cta-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .cta-section p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--white);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        padding: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+        background: #a8c3a0;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
     }
 
     .pricing-header {
