@@ -10,13 +10,12 @@
 
   <style>
     :root {
-      --primary: #003B5C;
-      --secondary: #0077b6;
-      --accent: #FFD700;
-      --bg: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      --text: #003B5C;
-      --white: #FFFFFF;
-      --font-primary: 'Inter', sans-serif;
+      --primary: #6772e5; /* Primary color */
+      --secondary: #f6f9fc; /* Light background */
+      --accent: #00bfff; /* Accent color */
+      --text: #333; /* Text color */
+      --white: #ffffff; /* White color */
+      --font-primary: 'Inter', sans-serif; /* Font family */
     }
 
     * {
@@ -27,19 +26,15 @@
 
     body {
       font-family: var(--font-primary);
-      background: var(--bg);
+      background: var(--secondary);
       color: var(--text);
       line-height: 1.6;
-      background: -webkit-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      background: -moz-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      background: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#C9D4C7", endColorstr="#9CB48F8C", GradientType=1);
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 4rem 2rem;
     }
 
     header {
@@ -58,16 +53,63 @@
       color: var(--primary);
     }
 
-    nav {
+    .logo i {
+      color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .nav-links {
       display: flex;
       gap: 2rem;
     }
 
-    nav a {
-      color: var(--primary);
+    @keyframes gradientAnimation {
+      0% {
+        background: linear-gradient(135deg, rgba(103, 114, 229, 1) 0%, rgba(0, 191, 255, 1) 100%);
+      }
+      50% {
+        background: linear-gradient(135deg, rgba(0, 191, 255, 1) 0%, rgba(103, 114, 229, 1) 100%);
+      }
+      100% {
+        background: linear-gradient(135deg, rgba(103, 114, 229, 1) 0%, rgba(0, 191, 255, 1) 100%);
+      }
+    }
+
+    .hero {
+      min-height: 100vh;
+      animation: gradientAnimation 5s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+      color: var(--white);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--accent);
+      color: var(--white);
       text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
       font-size: 1.1rem;
-      font-weight: 500;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0056b3;
+      transform: translateY(-3px);
     }
 
     .pricing-header {
@@ -143,23 +185,6 @@
       color: var(--accent);
     }
 
-    .cta-button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: var(--primary);
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-top: auto;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #f5c400;
-    }
-
     .note {
       font-size: 0.85rem;
       color: #666;
@@ -194,21 +219,7 @@
       margin-top: 4rem;
       color: var(--text);
       font-size: 0.9rem;
-      border-top: 1px solid rgba(0, 59, 92, 0.1);
-    }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--primary);
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 768px) {
@@ -235,7 +246,7 @@
         top: 60px;
         left: 0;
         right: 0;
-        background: var(--bg);
+        background: var(--secondary);
         padding: 1rem;
       }
 

@@ -12,13 +12,12 @@
     
     <style>
         :root {
-            --primary: #003B5C;
-            --secondary: #0077b6;
-            --accent: #FFD700;
-            --bg: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-            --text: #003B5C;
-            --white: #FFFFFF;
-            --font-primary: 'Inter', sans-serif;
+            --primary: #6772e5; /* Primary color */
+            --secondary: #f6f9fc; /* Light background */
+            --accent: #00bfff; /* Accent color */
+            --text: #333; /* Text color */
+            --white: #ffffff; /* White color */
+            --font-primary: 'Inter', sans-serif; /* Font family */
         }
 
         * {
@@ -29,19 +28,15 @@
 
         body {
             font-family: var(--font-primary);
-            background: var(--bg);
+            background: var(--secondary);
             color: var(--text);
             line-height: 1.6;
-            background: -webkit-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-            background: -moz-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-            background: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#C9D4C7", endColorstr="#9CB48F8C", GradientType=1);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
         }
 
         header {
@@ -64,16 +59,30 @@
             color: var(--primary);
         }
 
-        nav {
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .nav-links {
             display: flex;
             gap: 2rem;
         }
 
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(135deg, rgba(103, 114, 229, 1) 0%, rgba(0, 191, 255, 1) 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, rgba(0, 191, 255, 1) 0%, rgba(103, 114, 229, 1) 100%);
+            }
+            100% {
+                background: linear-gradient(135deg, rgba(103, 114, 229, 1) 0%, rgba(0, 191, 255, 1) 100%);
+            }
         }
 
         h1 {
@@ -133,16 +142,6 @@
             transform: translateY(-3px);
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            nav {
-                gap: 1rem;
-            }
-        }
-
         footer {
             text-align: center;
             padding: 2rem 0;
@@ -152,26 +151,11 @@
             border-top: 1px solid rgba(0, 59, 92, 0.1);
         }
 
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links.active {
-            display: flex;
-            background: #a8c3a0;
-        }
-
         @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
             .hamburger {
                 display: block;
             }
@@ -183,12 +167,13 @@
                 top: 60px;
                 left: 0;
                 right: 0;
-                background: var(--bg);
+                background: var(--secondary);
                 padding: 1rem;
             }
 
             .nav-links.active {
                 display: flex;
+                background: #a8c3a0;
             }
         }
     </style>
@@ -288,7 +273,5 @@
         })();
     </script>
     <!-- End of Tawk.to Script -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24089763b7a4451ea9e482dc9ff06965"}'></script>
-    <!-- End Cloudflare Web Analytics -->
 </body>
 </html> 
