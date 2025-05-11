@@ -13,12 +13,11 @@
   
   <style>
     :root {
-      --primary: #003B5C;
-      --secondary: #0077b6;
-      --accent: #FFD700;
-      --bg: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      --text: #003B5C;
-      --white: #FFFFFF;
+      --primary: #6772e5;
+      --secondary: #f6f9fc;
+      --accent: #00bfff;
+      --text: #333;
+      --white: #ffffff;
       --font-primary: 'Inter', sans-serif;
     }
 
@@ -30,19 +29,15 @@
 
     body {
       font-family: var(--font-primary);
-      background: var(--bg);
+      background: var(--secondary);
       color: var(--text);
       line-height: 1.6;
-      background: -webkit-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      background: -moz-linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      background: linear-gradient(90deg, rgba(201, 212, 199, 1) 0%, rgba(219, 200, 219, 1) 50%, rgba(156, 180, 143, 1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#C9D4C7", endColorstr="#9CB48F8C", GradientType=1);
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 4rem 2rem;
     }
 
     header {
@@ -88,7 +83,7 @@
       justify-content: center;
       text-align: center;
       padding: 0 1rem;
-      border-radius: 15px;
+      color: var(--white);
     }
 
     .hero h1 {
@@ -110,16 +105,17 @@
       display: inline-block;
       padding: 1rem 2rem;
       background: var(--accent);
-      color: var(--primary);
+      color: var(--white);
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
       font-size: 1.1rem;
       text-transform: uppercase;
-      transition: transform 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .cta-button:hover {
+      background: #0056b3;
       transform: translateY(-3px);
     }
 
@@ -134,11 +130,13 @@
       background: var(--white);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
     }
 
     .service-icon {
@@ -195,7 +193,7 @@
         top: 60px;
         left: 0;
         right: 0;
-        background: var(--bg);
+        background: var(--secondary);
         padding: 1rem;
       }
 
@@ -233,7 +231,7 @@
       margin-top: 4rem;
       color: var(--text);
       font-size: 0.9rem;
-      border-top: 1px solid rgba(0, 59, 92, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     nav a {
