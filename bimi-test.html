@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIMI Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success {
+            color: #2e7d32;
+        }
+        .error {
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>BIMI Configuration Test</h1>
+    
+    <div class="test">
+        <h2>1. BIMI Selector File</h2>
+        <div id="bimi-test">Testing access to .well-known/bimi/bimi-selector.txt...</div>
+    </div>
+    
+    <div class="test">
+        <h2>2. Logo File</h2>
+        <div id="logo-test">Testing access to logo.svg...</div>
+        <div id="logo-preview" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        // Test BIMI selector file
+        fetch('/.well-known/bimi/bimi-selector.txt')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('bimi-test').innerHTML = 
+                    `<span class="success">✓ BIMI selector file is accessible</span><br>
+                    <pre>${text}</pre>`;
+                
+                // Extract logo URL from BIMI selector
+                const logoMatch = text.match(/l=(https?:\/\/[^\s]+)/i);
+                if (logoMatch && logoMatch[1]) {
+                    const logoUrl = logoMatch[1];
+                    testLogo(logoUrl);
+                } else {
+                    document.getElementById('logo-test').innerHTML = 
+                        '<span class="error">✗ Could not find logo URL in BIMI selector</span>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('bimi-test').innerHTML = 
+                    `<span class="error">✗ Error accessing BIMI selector: ${error.message}</span>`;
+            });
+
+        // Test logo file
+        function testLogo(logoUrl) {
+            fetch(logoUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.blob();
+                })
+                .then(blob => {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(blob);
+                    img.style.maxWidth = '200px';
+                    img.onload = () => {
+                        document.getElementById('logo-test').innerHTML = 
+                            `<span class="success">✓ Logo file is accessible</span><br>
+                            URL: <code>${logoUrl}</code>`;
+                        document.getElementById('logo-preview').appendChild(img);
+                    };
+                })
+                .catch(error => {
+                    document.getElementById('logo-test').innerHTML = 
+                        `<span class="error">✗ Error accessing logo file: ${error.message}</span><br>
+                        URL: <code>${logoUrl}</code>`;
+                });
+        }
+    </script>
+</body>
+</html>

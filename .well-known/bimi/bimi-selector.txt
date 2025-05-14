@@ -1,0 +1,2 @@
+v=BIMI1
+l=https://map2map.com/assets/images/logo.svg
