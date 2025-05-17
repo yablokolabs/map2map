@@ -15,22 +15,8 @@
 <body>
   <canvas id="gradient-canvas"></canvas>
   <div class="container">
-    <header>
-      <div class="logo">
-        <a href="index.html" style="text-decoration: none;">
-          <img src="assets/images/logo_web.png" alt="Map2Map Logo" style="height: 200px;"/>
-        </a>
-      </div>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav class="nav-links">
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
-        <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
-        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
-        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
-      </nav>
+    <header id="header-component">
+      <!-- Header will be loaded here -->
     </header>
 
     <section class="hero">
@@ -74,12 +60,15 @@
     </section>
   </div>
 
-  <footer>
-    © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
+  <footer id="footer-component">
+    <!-- Footer will be loaded here -->
   </footer>
 
   <!-- Common JavaScript -->
   <script src="assets/js/common.js"></script>
+  
+  <!-- Components JavaScript -->
+  <script src="assets/js/components.js"></script>
   
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24089763b7a4451ea9e482dc9ff06965"}'></script>
