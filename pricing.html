@@ -245,12 +245,14 @@
     }
 
     footer {
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 4rem;
-      color: var(--text);
+      background: rgba(0, 59, 92, 0.8);
+      color: var(--white);
+      padding: 1.5rem 0;
       font-size: 0.9rem;
-      border-top: 1px solid rgba(0, 59, 92, 0.1);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(8px);
+      text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -430,11 +432,11 @@
         <li>Designed to help small businesses grow affordably</li>
       </ul>
     </div>
-
-    <footer>
-      © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
-    </footer>
   </div>
+
+  <footer>
+    © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
+  </footer>
 
   <script>
     document.querySelector('.hamburger').addEventListener('click', function () {

@@ -289,12 +289,14 @@
     }
 
     footer {
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 4rem;
-      color: var(--text);
+      background: rgba(0, 59, 92, 0.8);
+      color: var(--white);
+      padding: 1.5rem 0;
       font-size: 0.9rem;
-      border-top: 1px solid rgba(0, 59, 92, 0.1);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(8px);
+      text-align: center;
     }
 
     nav a {
@@ -362,6 +364,7 @@
     <section class="hero">
       <h1>Google Maps Management Service</h1>
       <p>Boost your visibility with expert management and optimization of your Google Maps listing.</p>
+      <p style="font-size: 1.5rem; margin-bottom: 2.5rem; max-width: 800px; color: var(--white); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">Map2Map is our first venture and brand.</p>
       <a href="contact.html" class="cta-button">Fix my listing now</a>
     </section>
 
@@ -398,10 +401,12 @@
       <a href="contact.html" class="cta-button">Start Free Consultation</a>
     </section>
 
-    <footer>
-      © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
     </footer>
   </div>
+
+  <footer>
+    © 2025 Yabloko Labs Pvt. Ltd. All rights reserved.
+  </footer>
 
   <script>
     document.querySelector('.hamburger').addEventListener('click', function() {
