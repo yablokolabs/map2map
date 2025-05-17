@@ -33,7 +33,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem 2rem 0.5rem 2rem;
   position: relative;
   z-index: 1;
 }
@@ -79,7 +79,7 @@ header {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: 75vh;
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -89,6 +89,7 @@ header {
   padding: 0 1rem;
   border-radius: 15px;
   position: relative;
+  margin-top: -2rem;
 }
 
 .hero h1 {
