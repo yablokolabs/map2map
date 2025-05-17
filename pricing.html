@@ -30,12 +30,24 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      position: relative;
+    }
+
+    #gradient-canvas {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     header {
@@ -54,9 +66,24 @@
       color: var(--primary);
     }
 
-    nav {
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
+      align-items: center;
+      background: rgba(242, 239, 232, 0.7);
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
     }
 
     nav a {
@@ -64,6 +91,39 @@
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      margin: 0 0.3rem;
+    }
+
+    nav a i {
+      margin-right: 0.4rem;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--white);
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 59, 92, 0.2);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 80%;
     }
 
     .pricing-header {
@@ -193,20 +253,6 @@
       border-top: 1px solid rgba(0, 59, 92, 0.1);
     }
 
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--primary);
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 3rem;
@@ -222,28 +268,76 @@
 
       .hamburger {
         display: block;
+        background: var(--primary);
+        color: var(--white);
+        padding: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .hamburger:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
       }
 
       .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(242, 239, 232, 0.7);
         padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        max-width: 300px;
+        z-index: 1000;
+        backdrop-filter: blur(8px);
       }
 
       .nav-links.active {
         display: flex;
+        animation: slideDown 0.3s ease forwards;
       }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -10px);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      nav a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        margin: 0.2rem 0;
+        font-size: 1.1rem;
+      }
+
+      nav a i {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <canvas id="gradient-canvas"></canvas>
   <div class="container">
     <header>
       <div class="logo">
@@ -255,11 +349,11 @@
         <i class="fas fa-bars"></i>
       </button>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+        <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
+        <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
     </header>
 
@@ -325,11 +419,11 @@
       </div>
     </div>
 
-    <p style="color: red; text-align: center;">Limited time offer: 10% off the Starter Package until June 2025!</p>
+    <p style="color: var(--accent); text-align: center; font-size: 1.5rem; font-weight: bold; animation: pulse 2s infinite;">Limited time offer: 10% off the Starter Package until June 2025!</p>
     <p style="font-weight: bold; text-align: center;">100% Money-Back Guarantee if Not Satisfied Within 30 Days!</p>
 
-    <div class="why-section">
-      <h2>Why We Charge This Way</h2>
+    <div class="why-section" style="color: white;">
+      <h2 style="color: white;">Why We Charge This Way</h2>
       <ul>
         <li>No monthly subscriptions</li>
         <li>You pay only for real changes</li>
@@ -348,6 +442,93 @@
     });
   </script>
 
+  <!-- Gradient.js -->
+  <script>
+    class Gradient {
+      constructor() {
+        this.canvas = document.getElementById('gradient-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.points = [];
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.init();
+      }
+
+      init() {
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+
+        // Create more points for a richer animation
+        for (let i = 0; i < 6; i++) {
+          this.points.push({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            vx: (Math.random() - 0.5) * 6.0,
+            vy: (Math.random() - 0.5) * 6.0,
+            radius: Math.random() * 300 + 200
+          });
+        }
+
+        this.animate();
+        window.addEventListener('resize', () => this.resize());
+      }
+
+      resize() {
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+      }
+
+      animate() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+
+        // Update points
+        this.points.forEach(point => {
+          point.x += point.vx;
+          point.y += point.vy;
+
+          // Bounce off edges with padding
+          if (point.x < -100 || point.x > this.width + 100) point.vx *= -1;
+          if (point.y < -100 || point.y > this.height + 100) point.vy *= -1;
+        });
+
+        // Create multiple overlapping gradients
+        this.points.forEach((point, index) => {
+          const gradient = this.ctx.createRadialGradient(
+            point.x, point.y, 0,
+            point.x, point.y, point.radius
+          );
+
+          // Create different color combinations for each point
+          const colors = [
+            ['#003B5C', '#0077b6', '#003B5C'],
+            ['#0077b6', '#003B5C', '#0077b6'],
+            ['#003B5C', '#0077b6', '#003B5C'],
+            ['#0077b6', '#003B5C', '#0077b6'],
+            ['#003B5C', '#0077b6', '#003B5C'],
+            ['#0077b6', '#003B5C', '#0077b6']
+          ];
+
+          gradient.addColorStop(0, colors[index][0]);
+          gradient.addColorStop(0.5, colors[index][1]);
+          gradient.addColorStop(1, colors[index][2]);
+
+          this.ctx.globalAlpha = 0.3;
+          this.ctx.fillStyle = gradient;
+          this.ctx.fillRect(0, 0, this.width, this.height);
+        });
+
+        this.ctx.globalAlpha = 1.0;
+        requestAnimationFrame(() => this.animate());
+      }
+    }
+
+    // Initialize gradient
+    const gradient = new Gradient();
+  </script>
+
+  <!-- Start of Tawk.to Script -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
@@ -359,5 +540,9 @@
       s0.parentNode.insertBefore(s1, s0);
     })();
   </script>
+  <!-- End of Tawk.to Script -->
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24089763b7a4451ea9e482dc9ff06965"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
