@@ -79,17 +79,32 @@ header {
 }
 
 .hero {
-  min-height: 75vh;
-  background: transparent;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
+  min-height: 90vh;
+}
+
+.hero-content {
+  max-width: 1000px;
   text-align: center;
-  padding: 0 1rem;
-  border-radius: 15px;
-  position: relative;
-  margin-top: -2rem;
+  padding: 2rem;
+}
+
+.hero-image {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+.hero-svg {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px !important;
 }
 
 .hero h1 {
@@ -99,6 +114,14 @@ header {
   max-width: 800px;
   color: var(--white);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Override for all pages */
+.faq-page h1,
+.contact-page h1,
+.index-page h1 {
+  color: var(--primary);
+  text-shadow: none;
 }
 
 .hero p {
@@ -303,12 +326,16 @@ nav a:hover::after {
     margin-right: 0.5rem;
   }
 
-  .hero h1 {
-    font-size: 2.5rem;
+  .hero {
+    padding: 1rem 0;
   }
 
-  .hero p {
-    font-size: 1.2rem;
+  .hero-image {
+    height: 300px;
+  }
+
+  .hero-svg {
+    max-width: 400px;
   }
 
   .services {
@@ -332,6 +359,28 @@ h1 {
   color: var(--primary);
   margin: 3rem 0;
   text-align: center;
+}
+
+.services-page .hero-image {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.services-page .hero-svg {
+  max-width: 500px;
+  height: auto;
+  max-height: 400px;
+  border-radius: 26px;
+  overflow: hidden;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .services-page .hero-svg {
+    max-height: 250px;
+  }
 }
 
 .services-grid {
@@ -365,6 +414,26 @@ h1 {
 }
 
 /* Pricing Page Specific Styles */
+.pricing-page.hero-image {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-page .hero-svg {
+  max-width: 500px;
+  height: auto;
+  max-height: 400px;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .pricing-page .hero-svg {
+    max-height: 250px;
+  }
+}
+
 .pricing-header {
   text-align: center;
   margin: 4rem 0;
@@ -473,6 +542,30 @@ h1 {
 }
 
 /* FAQ Page Specific Styles */
+.faq-page.hero-image {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-page .hero-svg {
+  max-width: 500px;
+  height: auto;
+  max-height: 400px;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .faq-page .hero-svg {
+    max-height: 250px;
+  }
+}
+
 .faq-section {
   max-width: 800px;
   margin: 0 auto;
@@ -570,4 +663,59 @@ h1 {
     .contact-form {
         padding: 1.5rem;
     }
+}
+
+.contact-page .hero-svg {
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .hero-svg {
+    max-height: 350px;
+  }
+  .contact-page .hero-svg {
+    max-width: 500px;
+  }
+}
+
+/* Specific sizes for different pages */
+.index-page .hero-svg,
+.services-page .hero-svg,
+.pricing-page .hero-svg,
+.faq-page .hero-svg,
+.contact-page .hero-svg {
+  border-radius: 26px !important;
+}
+
+.index-page .hero-svg {
+  max-width: 600px;
+}
+
+.services-page .hero-svg {
+  max-width: 500px;
+}
+
+.pricing-page .hero-svg {
+  max-width: 500px;
+}
+
+.faq-page .hero-svg {
+  max-width: 500px;
+}
+
+.contact-page .hero-svg {
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .index-page .hero-svg,
+  .services-page .hero-svg,
+  .pricing-page .hero-svg,
+  .faq-page .hero-svg {
+    max-width: 400px;
+  }
+  
+  .contact-page .hero-svg {
+    max-width: 500px;
+  }
 } 
