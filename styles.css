@@ -718,4 +718,80 @@ h1 {
   .contact-page .hero-svg {
     max-width: 500px;
   }
+}
+
+.contact-email-section {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact-email-section p {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 0;
+}
+
+.contact-email-section a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-email-section a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .contact-email-section {
+        margin: 1.5rem auto;
+        padding: 0.8rem;
+    }
+    
+    .contact-email-section p {
+        font-size: 1.1rem;
+    }
+}
+
+.contact-email-display {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contact-email-display h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-email-display .email-address {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-email-display {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+    
+    .contact-email-display h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-email-display .email-address {
+        font-size: 1.3rem;
+    }
 } 
