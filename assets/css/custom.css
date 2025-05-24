@@ -1,0 +1,152 @@
+/* Custom styles for Map2Map navigation bar and header alignment */
+
+/* Map Overlay Link Styles */
+.map-overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: block;
+  background: rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+/* Contact Success Modal Styles */
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+}
+.contact-modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 40px 30px 30px 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  text-align: center;
+  position: relative;
+}
+.contact-modal-content h2 {
+  color: var(--bs-link-color);
+  margin-bottom: 12px;
+}
+.contact-modal-content p {
+  color: #333;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+.contact-modal-close {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  font-size: 1.8rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.contact-modal-close:hover {
+  color: #fc7303;
+}
+
+/* Make FAQ columns equal height */
+.faq-equal-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100%;
+}
+.faq-equal-row > .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}
+
+
+.accordions.is-first-expanded,
+.get-free-quote {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure logo is always vertically centered */
+.header-area .main-nav .logo {
+  margin-top: 0 !important;
+}
+
+
+.main-banner-headline {
+  font-size: 39px !important;
+}
+
+
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.button-row .main-button,
+.button-row .second-button {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 80px; /* Adjust to match your button height */
+}
+.button-row .or-text {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.brand-name {
+  text-transform: none !important;
+  font-size: 40px !important;
+}
+.header-area,
+.header-area.header-sticky,
+.header-area.background-header {
+  height: 100px !important;
+  min-height: 100px !important;
+}
+.header-area .main-nav,
+.header-area.header-sticky .main-nav,
+.header-area.background-header .main-nav {
+  display: flex;
+  align-items: center;
+  height: 100px !important;
+}
+.header-area .main-nav .logo,
+.header-area.header-sticky .main-nav .logo,
+.header-area.background-header .main-nav .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-top: 0;
+  padding: 0 20px 0 0;
+}
+.header-area .main-nav .logo img,
+.header-area.header-sticky .main-nav .logo img,
+.header-area.background-header .main-nav .logo img {
+  max-width: 90px;
+  display: block;
+  height: auto;
+  margin: 10px;
+}

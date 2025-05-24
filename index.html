@@ -1,82 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Map2Map™ - Google Maps Management</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Favicon Links -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="alternate icon" href="favicon.png" type="image/png">
-</head>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Map2Map™ - Google Maps Management</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-tale-seo-agency.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+<!--
+
+TemplateMo 582 Tale SEO Agency
+
+https://templatemo.com/tm-582-tale-seo-agency
+
+-->
+  </head>
+
 <body>
-  <canvas id="gradient-canvas"></canvas>
-  <div class="container">
-    <header id="header-component">
-      <!-- Header will be loaded here -->
-    </header>
 
-    <section class="hero index-page">
-      <div class="hero-content">
-        <div class="hero-image">
-          <img src="assets/images/business.svg" alt="Business illustration" class="hero-svg">
-        </div>
-        <h1>Google Maps Management Service</h1>
-        <p>Boost your visibility with expert management and optimization of your Google Maps listing.</p>
-        <p style="font-size: 1.5rem; margin-bottom: 2.5rem; max-width: 800px; color: var(--white); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">Map2Map™ is our first venture and brand.</p>
-        <a href="contact.html" class="cta-button">Fix my listing now</a>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </section>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
 
-    <section class="services">
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-map-marker-alt"></i>
+  <!-- ***** Pre-Header Area Start ***** -->
+  <div class="pre-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-9">
+          <div class="left-info">
+            <ul>
+              <li><a href="#"><i class="fa fa-phone"></i>+91 9538886568</a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i>sales@map2map.com</a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i>Bangalore, India</a></li>
+            </ul>
+          </div>
         </div>
-        <h3>New Listing Creation</h3>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-sync-alt"></i>
+        <div class="col-lg-4 col-sm-3">
+          <div class="social-icons">
+            <ul>
+              <li><a href="https://www.linkedin.com/in/map2map-yabloko-labs-6b9157364/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="https://www.instagram.com/yablokolabs/?igsh=ODBncnA4a3prNGFt" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://github.com/map2map" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+            </ul>
+          </div>
         </div>
-        <h3>Listing Updates & Optimization</h3>
       </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-clipboard-check"></i>
-        </div>
-        <h3>Accurate Business info Corrections</h3>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-images"></i>
-        </div>
-        <h3>Visual Enhancements</h3>
-      </div>
-    </section>
+    </div>
+  </div>
+  <!-- ***** Pre-Header Area End ***** -->
 
-    <section class="cta-section">
-      <h2>Not seeing results on Google Maps?</h2>
-      <p>Let us help you fix that.</p>
-      <a href="contact.html" class="cta-button">Start Free Consultation</a>
-    </section>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="Map2Map Logo">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                      <li class="scroll-to-section"><a href="#services">Services</a></li>
+                      <li class="scroll-to-section"><a href="#projects">Success Stories</a></li>
+                      <li class="has-sub">
+                          <a href="javascript:void(0)">Pages</a>
+                          <ul class="sub-menu">
+                              <li><a href="about.html">About Us</a></li>
+                              <li><a href="faqs.html">FAQs</a></li>
+                          </ul>
+                      </li>
+                      <li class="scroll-to-section"><a href="#infos">Infos</a></li>
+                      <li class="scroll-to-section"><a href="#contact">Contact</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="caption header-text">
+            <h6 class="brand-name">Map2Map™</h6>
+            <div class="line-dec"></div>
+            <h4 class="main-banner-headline">Dive <em>Into Google Maps</em> World <span> Map2Map™</span></h4>
+            <p>Map2Map™ boosts your business visibility with expert Google Maps listing management and optimization. From new listing creation to updates, corrections, and visual enhancements, we help you stand out and get results on Google Maps. <a href="about.html">Learn more</a> or <a href="faqs.html">see FAQs</a>.</p>
+            <div class="button-row">
+              <div class="main-button scroll-to-section"><a href="#services">Discover More</a></div>
+              <span class="or-text">or</span>
+              <div class="second-button"><a href="faqs.html">Check our FAQs</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <footer id="footer-component">
-    <!-- Footer will be loaded here -->
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-heading">
+                <h2>We Provide <em>Specialized Google Maps Management Services</em><br>
+                  <span>For Your Business</span></h2>
+                  <div class="line-dec"></div>
+                  <p>From new listing creation to business info corrections, photos, and optimization—Map2Map™ ensures your business stands out and stays accurate on Google Maps.</p>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-01.jpg" alt="New Listing Creation" class="templatemo-feature">
+                </div>
+                <h4>New Listing Creation</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-02.jpg" alt="Listing Updates and Optimization" class="templatemo-feature">
+                </div>
+                <h4>Updates &amp; Optimization</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-03.jpg" alt="Business Info Corrections" class="templatemo-feature">
+                </div>
+                <h4>Accurate Business Info</h4>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="service-item">
+                <div class="icon">
+                  <img src="assets/images/services-04.jpg" alt="Photos and Descriptions" class="templatemo-feature">
+                </div>
+                <h4>Photos &amp; Descriptions</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects section" id="projects">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>See Our <em>Google Maps</em> <span>Success Stories</span></h2>
+            <div class="line-dec"></div>
+            <p>Explore how we've helped businesses get discovered, corrected listings, and enhanced their presence on Google Maps with our expert services.</p>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-features owl-carousel">
+            <div class="item">
+              <img src="assets/images/projects-01.jpg" alt="Google Maps Listing for Local Bakery">
+              <div class="down-content">
+                <h4>Google Maps Listing Created for Sign Shop</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-02.jpg" alt="Optimized Restaurant Listing">
+              <div class="down-content">
+                <h4>Optimized Restaurant Listing for Higher Visibility</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-03.jpg" alt="Corrected Business Info for Auto Repair Shop">
+              <div class="down-content">
+                <h4>Corrected Business Info for Industry Equipment Provider</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-04.jpg" alt="Added Photos to Salon Listing">
+              <div class="down-content">
+                <h4>Added Professional Photos to Salon Listing</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-02.jpg" alt="Updated Business Hours for Retail Store">
+              <div class="down-content">
+                <h4>Updated Business Hours for Retail Store</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <img src="assets/images/projects-03.jpg" alt="Improved Description for Fitness Center">
+              <div class="down-content">
+                <h4>Improved Description for Fitness Center</h4>
+                <a href="#"><i class="fa fa-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="infos section" id="infos">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-content">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="left-image">
+                  <img src="assets/images/left-infos.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="section-heading">
+                  <h2>About <em>Map2Map™</em> &amp; <span>Our Services</span></h2>
+                  <div class="line-dec"></div>
+                  <p>Map2Map™ is a professional Google Maps management service dedicated to helping businesses optimize their online presence. From creating new listings to maintaining and updating existing ones, we ensure your business is accurately represented and stands out on Google Maps.</p>
+                </div>
+                <div class="skills">
+                  <div class="skill-slide marketing">
+                    <div class="fill"></div>
+                    <h6>Listing Management</h6>
+                    <span>Expert</span>
+                  </div>
+                  <div class="skill-slide digital">
+                    <div class="fill"></div>
+                    <h6>Profile Optimization</h6>
+                    <span>Advanced</span>
+                  </div>
+                  <div class="skill-slide media">
+                    <div class="fill"></div>
+                    <h6>Multi-location Support</h6>
+                    <span>Enterprise</span>
+                  </div>
+                </div>
+                <p class="more-info">We handle all aspects of your Google Maps listing, including updates, photos, business info, and reputation management. Enjoy flexible update schedules and dedicated support—so you can focus on your business while we take care of your online presence. <a href="#contact">Contact us</a> for more information.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-us-content">
+            <div class="row">
+              <div class="col-lg-4">
+                <div id="map">
+                  <div id="map" style="position:relative;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.359151463834!2d77.49362107532038!3d13.012785987306358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d007df36a2b%3A0x42d4551ace4f1236!2sYabloko%20Labs%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1748112714633!5m2!1sen!2sin" width="100%" height="670px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <form id="contact-form" action="https://formspree.io/f/xnndpnvp" method="POST">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="section-heading">
+                        <h2><em>Contact Us</em> &amp; Get In <span>Touch</span></h2>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="tel" name="phone" id="phone" placeholder="Your Phone Number..." autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on" >
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+<!-- Success Modal -->
+<div id="contact-success-modal" class="contact-modal" style="display:none;">
+  <div class="contact-modal-content">
+    <span class="contact-modal-close" id="close-contact-modal">&times;</span>
+    <h2>Thank You!</h2>
+    <p>Your message has been received.<br>We will get back to you soon.</p>
+  </div>
+</div>
+<script src="assets/js/form-success-modal.js"></script>
+<script>initFormSuccessModal('contact-form');</script>
+                <div class="more-info">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-phone"></i>
+                        <h4><a href="#">+91 9538886568</a></h4>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-envelope"></i>
+                        <h4><a href="#">sales@map2map.com</a></h4>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="info-item">
+                        <i class="fa fa-map-marker"></i>
+                        <h4><a href="#">Bangalore, India</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright &copy; 2025 <a href="https://yablokolabs.com" target="_blank" rel="noopener">Yabloko Labs Pvt. Ltd</a>. All rights reserved. 
+      </div>
+    </div>
   </footer>
 
-  <!-- Common JavaScript -->
-  <script src="assets/js/common.js"></script>
-  
-  <!-- Components JavaScript -->
-  <script src="assets/js/components.js"></script>
-  
-  <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "24089763b7a4451ea9e482dc9ff06965"}'></script>
-  <!-- End Cloudflare Web Analytics -->
-</body>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
+  </body>
+
 </html>
