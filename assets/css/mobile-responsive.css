@@ -123,48 +123,60 @@
     margin-left: auto;
   }
 
-  .menu-trigger span {
-    display: none;
+  /* Hamburger Icon Styling */
+  .menu-trigger { /* This is the <a> tag */
+    /* display: block; is already set above, good */
+    /* position: relative; is already set above, good */
+    /* width: 30px; is already set above, good */
+    /* height: 24px; is already set above, good */
+    /* cursor: pointer; is already set above, good */
+    /* margin-left: auto; is already set above, good */
+    /* Remove text "Menu" visually but keep for accessibility */
+    text-indent: -9999px;
+    color: transparent;
+    border: none; /* Ensure no default <a> styling interferes */
+    background-color: transparent; /* Ensure no default <a> styling interferes */
   }
 
-  .menu-trigger::before,
-  .menu-trigger::after,
-  .menu-trigger span::before {
-    content: '';
+  .menu-trigger span, /* This is the span inside <a>, will be middle bar */
+  .menu-trigger::before, /* Top bar */
+  .menu-trigger::after { /* Bottom bar */
+    content: ''; /* Needed for ::before/::after to generate */
     position: absolute;
     left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
+    width: 100%; /* Full width of the 30px trigger */
+    height: 2px; /* Thickness of bars */
+    background-color: #333; /* Color of bars, from existing */
     transition: all 0.3s ease;
   }
 
   .menu-trigger::before {
-    top: 0;
+    top: 0; /* Position top bar */
   }
 
-  .menu-trigger span::before {
-    top: 50%;
+  .menu-trigger span {
+    display: block; /* Make the span visible to act as a bar */
+    top: 50%; /* Position middle bar */
     transform: translateY(-50%);
   }
 
   .menu-trigger::after {
-    bottom: 0;
+    bottom: 0; /* Position bottom bar */
   }
 
-  /* Hamburger Animation */
+  /* Hamburger Animation to X when active */
   .menu-trigger.active::before {
-    transform: rotate(45deg);
-    top: 11px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
   }
 
-  .menu-trigger.active span::before {
-    opacity: 0;
+  .menu-trigger.active span {
+    opacity: 0; /* Middle bar fades out */
   }
 
   .menu-trigger.active::after {
-    transform: rotate(-45deg);
-    bottom: 11px;
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
   }
 
   /* Submenu Styles */
