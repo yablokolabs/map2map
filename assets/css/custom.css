@@ -202,3 +202,65 @@
 .footer-content .text-center a:hover {
   text-decoration: underline;
 }
+
+/* Footer Alignment Tweaks */
+/* Footer Alignment Fixes */
+footer .footer-content .row:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+footer .footer-content [class^="col-lg"] {
+  flex: 1 1 220px;
+  min-width: 220px;
+  padding: 0 15px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+footer .footer-content h4 {
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+footer .footer-content ul.footer-links {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Remove default Bootstrap spacing */
+footer .container,
+footer .col-lg-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer .row {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+/* Ensure links in footer are properly spaced */
+footer .footer-links li {
+  margin-bottom: 8px;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  footer .footer-content [class^="col-lg"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  footer .footer-content h4,
+  footer .footer-content ul.footer-links {
+    text-align: center;
+  }
+}

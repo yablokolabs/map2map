@@ -50,6 +50,20 @@
   .contact-us .contact-us-content {
     padding: 30px 15px;
   }
+
+  /* Remove decorative background images that clutter small screens */
+  .services::before,
+  .services::after,
+  .infos::before,
+  .infos::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Ensure service boxes have a clean white background */
+  .services .service-item {
+    background-image: none !important;
+  }
 }
 
 /* Mobile Styles */
@@ -99,7 +113,10 @@
 
 /* Fix for mobile menu */
 @media screen and (max-width: 991px) {
-  .main-nav .nav {
+  /* Ensure the navigation is hidden on mobile by default. Using higher specificity
+     (.header-area .main-nav .nav) so it overrides the same-specificity rule that
+     exists in templatemo-tale-seo-agency.css. */
+  .header-area .main-nav .nav {
     display: none;
     position: absolute;
     top: 100%;
@@ -107,10 +124,11 @@
     width: 100%;
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 999;
+    z-index: 99;
   }
 
-  .main-nav .nav.active {
+  /* When the menu is toggled via JS we add the 'active' class to .nav */
+  .header-area .main-nav .nav.active {
     display: block;
   }
 
@@ -121,6 +139,7 @@
     height: 24px;
     cursor: pointer;
     margin-left: auto;
+    z-index: 9999;
   }
 
   /* Hamburger Icon Styling */
@@ -131,6 +150,7 @@
     /* height: 24px; is already set above, good */
     /* cursor: pointer; is already set above, good */
     /* margin-left: auto; is already set above, good */
+    /* z-index: 9999; is already set above, good */
     /* Remove text "Menu" visually but keep for accessibility */
     text-indent: -9999px;
     color: transparent;
@@ -146,7 +166,7 @@
     left: 0;
     width: 100%; /* Full width of the 30px trigger */
     height: 2px; /* Thickness of bars */
-    background-color: #333; /* Color of bars, from existing */
+    background-color: #fff; /* Keep original white bars */
     transition: all 0.3s ease;
   }
 
@@ -162,6 +182,12 @@
 
   .menu-trigger::after {
     bottom: 0; /* Position bottom bar */
+  }
+
+  /* Hide extra bars originating from anchor pseudo-elements to prevent duplicate lines */
+  .menu-trigger::before,
+  .menu-trigger::after {
+    display: none !important;
   }
 
   /* Hamburger Animation to X when active */
