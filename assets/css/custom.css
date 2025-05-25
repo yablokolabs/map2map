@@ -1,5 +1,10 @@
 /* Custom styles for Map2Map navigation bar and header alignment */
 
+/* Keep FAQs link in original case */
+.header-area .main-nav .nav li a[href*="faqs"] {
+  text-transform: none !important;
+}
+
 /* Map Overlay Link Styles */
 .map-overlay-link {
   position: absolute;
@@ -263,4 +268,9 @@ footer .footer-links li {
   footer .footer-content ul.footer-links {
     text-align: center;
   }
+}
+
+/* Override text transform for submenu items */
+.header-area .main-nav .nav li.has-sub ul.sub-menu li a {
+    text-transform: none !important;
 }
