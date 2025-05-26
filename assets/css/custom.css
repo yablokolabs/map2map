@@ -274,3 +274,207 @@ footer .footer-links li {
 .header-area .main-nav .nav li.has-sub ul.sub-menu li a {
     text-transform: none !important;
 }
+
+/* Pricing Page Styles */
+/* Pricing Header */
+.pricing-header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.pricing-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Pricing Cards Section */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid #f3d7ff;
+  border-radius: 23px;
+  padding: 30px;
+  text-align: center;
+  transition: all .4s;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+}
+
+.pricing-card:hover {
+  border-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.package-name {
+  font-size: 20px;
+  color: #2a2a2a;
+  margin-top: 20px;
+  line-height: 30px;
+  transition: all .4s;
+}
+
+.pricing-card:hover .package-name {
+  color: #5b03e4;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5b03e4;
+  margin: 1.5rem 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #2a2a2a;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.features li:before {
+  content: "✓";
+  color: #5b03e4;
+  position: absolute;
+  left: 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #5b03e4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  background-color: #5b03e4;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.note {
+  font-size: 14px;
+  color: #afafaf;
+  margin: 1rem 0;
+}
+
+/* Why Section */
+.why-section {
+  background: #fff;
+  padding: 40px 0;
+  margin-top: 0;
+  text-align: center;
+  position: relative;
+}
+
+.why-section h2 {
+  color: #2a2a2a;
+  font-size: 30px;
+  margin-bottom: 2rem;
+}
+
+.why-section ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.why-section li {
+  padding: 0.5rem 0;
+  font-size: 15px;
+  color: #2a2a2a;
+  line-height: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .main-banner#top {
+    padding: 185px 0px;
+  }
+
+  .main-banner#top h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .pricing-page .hero-image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-banner#top .caption {
+    padding: 30px !important;
+    text-align: center;
+  }
+
+  .main-banner#top .line-dec {
+    margin: 30px auto 20px auto;
+  }
+}
+
+/* Center Card Style */
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1; /* Make it span all columns */
+  max-width: 350px; /* Match other card widths */
+  margin: 0 auto; /* Center the card container */
+}
+
+.center-card .pricing-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Highlight Text Style */
+.highlight-text {
+  color: var(--accent) !important;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+/* Custom Variables */
+:root {
+  --accent: #5b03e4;
+  --accent-dark: #4a02b3;
+  --text-color: #2a2a2a;
+  --gradient: linear-gradient(90deg, rgba(85,0,227,1) 0%, rgba(198,61,255,1) 100%);
+}
