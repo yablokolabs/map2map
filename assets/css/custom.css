@@ -270,6 +270,30 @@ footer .footer-links li {
   }
 }
 
+/* Project items height fix */
+.projects .item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projects .item img {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensures images cover the area while maintaining aspect ratio */
+}
+
+.projects .item .down-content {
+  flex: 1; /* Makes the content area flexible */
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .item .down-content h4 {
+  flex: 1; /* Makes the title take up available space */
+  margin-bottom: 15px;
+}
+
 /* Override text transform for submenu items */
 .header-area .main-nav .nav li.has-sub ul.sub-menu li a {
     text-transform: none !important;
