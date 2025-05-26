@@ -20,5 +20,25 @@ function includeFooter() {
         });
 }
 
-// Call the function when the DOM is loaded
-document.addEventListener('DOMContentLoaded', includeFooter); 
+// Function to load analytics scripts
+function loadAnalytics() {
+    // Load Cloudflare Analytics
+    const cfScript = document.createElement('script');
+    cfScript.defer = true;
+    cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cfScript.dataset.cfBeacon = '{"token": "24089763b7a4451ea9e482dc9ff06965"}';
+    document.head.appendChild(cfScript);
+    
+    // Load Ahrefs Analytics
+    const ahrefsScript = document.createElement('script');
+    ahrefsScript.src = 'https://analytics.ahrefs.com/analytics.js';
+    ahrefsScript.dataset.key = 'OKf0ZdUa/hzhaw1hBscJLw';
+    ahrefsScript.async = true;
+    document.head.appendChild(ahrefsScript);
+}
+
+// Call the functions when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    includeFooter();
+    loadAnalytics();
+});
