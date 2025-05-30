@@ -1,3 +1,11 @@
+/* Custom styles for Map2Map */
+
+/* Reduce spacing for services section */
+#services.section {
+  margin-top: 5px !important;
+  padding-top: 5px !important;
+}
+
 /* Custom styles for Map2Map navigation bar and header alignment */
 
 /* Keep FAQs link in original case */
@@ -408,6 +416,11 @@ footer .footer-links li {
   font-size: 14px;
   color: #afafaf;
   margin: 1rem 0;
+}
+
+/* Ensure Refresh button text is readable */
+#refreshData {
+  color: #fff !important; /* Set text color to white */
 }
 
 /* Why Section */
