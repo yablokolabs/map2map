@@ -278,6 +278,20 @@
     }
 
 
+	// Google Analytics Integration
+	(function() {
+		var ga = document.createElement('script');
+		ga.async = true;
+		ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-TELQN7ZQCV';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-TELQN7ZQCV');
+	})();
+
 	// Tawk.to Chat Integration
 	var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 	(function() {
