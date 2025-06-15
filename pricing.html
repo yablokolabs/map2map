@@ -23,6 +23,46 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/mobile-responsive.css">
     <style>
+      .currency-toggler {
+        text-align: left;
+        margin: 20px 0 40px;
+        padding: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .currency-btn {
+        background: #f5f5f5;
+        border: 2px solid #ddd;
+        padding: 10px 25px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+      .currency-btn.active {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+      .price {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 15px 0;
+      }
+      .price small {
+        font-size: 0.8rem;
+        font-weight: normal;
+        color: #666;
+      }
+      .price.inr, .price.usd {
+        display: none;
+      }
+      .currency-inr .price.inr,
+      .currency-usd .price.usd {
+        display: block;
+      }
       .privacy-content {
         padding: 40px 0;
         background: #fff;
@@ -154,14 +194,26 @@
     </div>
   </div>
 
+  <div class="container">
+    <div class="currency-toggler">
+      <button class="currency-btn active" data-currency="inr">INR (₹)</button>
+      <button class="currency-btn" data-currency="usd">USD ($)</button>
+    </div>
+  </div>
+
   <div class="pricing-cards">
     <!-- Starter -->
     <div class="pricing-card">
       <div class="package-name">Starter Package</div>
-      <div class="price">
+      <div class="price inr">
         <span style="text-decoration: line-through; font-size: 1rem;">₹2,199</span><br>
-        ₹1,999 <br>
+        ₹1,999<br>
         <span style="color: green; font-size: 0.9rem;">Save ₹200!</span>
+      </div>
+      <div class="price usd">
+        <span style="text-decoration: line-through; font-size: 1rem;">$26.34</span><br>
+        $23.94<br>
+        <span style="color: green; font-size: 0.9rem;">Save $2.40!</span>
       </div>
       <ul class="features">
         <li>Google Business Profile Setup (1 Location)</li>
@@ -175,7 +227,8 @@
     <!-- Mid-Tier -->
     <div class="pricing-card">
       <div class="package-name">Mid-Tier Package</div>
-      <div class="price">₹3,499</div>
+      <div class="price inr">₹3,499</div>
+      <div class="price usd">$41.90</div>
       <ul class="features">
         <li>All Starter Features</li>
         <li>Extra Support</li>
@@ -186,7 +239,8 @@
     <!-- Premium -->
     <div class="pricing-card" style="border: 2px solid var(--accent); box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
       <div class="package-name">Premium Package <span style="color: var(--accent); font-size: 0.9rem;">Most Popular</span></div>
-      <div class="price">₹4,999</div>
+      <div class="price inr">₹4,999</div>
+      <div class="price usd">$59.87</div>
       <ul class="features">
         <li>All Mid-Tier Features</li>
         <li>Ongoing Support</li>
@@ -199,7 +253,8 @@
     <div class="center-card">
       <div class="pricing-card">
         <div class="package-name">Update Service</div>
-        <div class="price">5 updates for ₹450</div>
+        <div class="price inr">5 updates for ₹450</div>
+        <div class="price usd">5 updates for $5.39</div>
         <ul class="features">
           <li>Business Hours</li>
           <li>Phone Number</li>
@@ -214,7 +269,8 @@
 
   </div>
 
-  <p class="highlight-text">Limited time offer: 10% off the Starter Package until July 2025!</p>
+  <p class="highlight-text">Limited time offer: 10% off the Starter Package until August 2025!<br>
+  <small>Note: USD prices are approximate. Final amount may vary based on exchange rates at time of payment.</small></p>
   <p style="font-weight: bold; text-align: center;">100% Money-Back Guarantee if Not Satisfied Within 30 Days!</p>
 
   <div class="why-section">
@@ -239,6 +295,29 @@
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/mobile-menu.js"></script>
   <script src="assets/js/include-footer.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggler = document.querySelector('.currency-toggler');
+      const buttons = document.querySelectorAll('.currency-btn');
+      
+      toggler.addEventListener('click', function(e) {
+        if (e.target.classList.contains('currency-btn')) {
+          const currency = e.target.dataset.currency;
+          
+          // Update active button
+          buttons.forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          
+          // Update body class
+          document.body.classList.remove('currency-inr', 'currency-usd');
+          document.body.classList.add('currency-' + currency);
+        }
+      });
+      
+      // Set initial state
+      document.body.classList.add('currency-inr');
+    });
+  </script>
 
 </body>
 </html> 
