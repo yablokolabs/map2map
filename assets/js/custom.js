@@ -33,6 +33,19 @@
 	  } else {
 	    $("header").removeClass("background-header");
 	  }
+
+	  // Back to top button visibility
+	  if (scroll > 300) {
+	    $('.back-to-top').addClass('active');
+	  } else {
+	    $('.back-to-top').removeClass('active');
+	  }
+	});
+
+	// Back to top button click event
+	$(document).on('click', '.back-to-top', function() {
+	  $('html, body').animate({ scrollTop: 0 }, 800);
+	  return false;
 	});
 
 
