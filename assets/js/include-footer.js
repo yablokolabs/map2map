@@ -1,5 +1,9 @@
 // Function to include Google Tag Manager
 function includeGTM() {
+    // Check if GTM is already loaded to prevent duplicates
+    if (window._gtm_included) return;
+    window._gtm_included = true;
+    
     // Add GTM script to head
     const gtmScript = document.createElement('script');
     gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -9,16 +13,18 @@ function includeGTM() {
     })(window,document,'script','dataLayer','GTM-5QNCJVBQ');`;
     document.head.prepend(gtmScript);
 
-    // Add noscript iframe after body
-    const noscript = document.createElement('noscript');
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-5QNCJVBQ';
-    iframe.height = '0';
-    iframe.width = '0';
-    iframe.style.display = 'none';
-    iframe.style.visibility = 'hidden';
-    noscript.appendChild(iframe);
-    document.body.insertBefore(noscript, document.body.firstChild);
+    // Add noscript iframe after body if it doesn't exist
+    if (!document.querySelector('noscript iframe[src*="googletagmanager"]')) {
+        const noscript = document.createElement('noscript');
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-5QNCJVBQ';
+        iframe.height = '0';
+        iframe.width = '0';
+        iframe.style.display = 'none';
+        iframe.style.visibility = 'hidden';
+        noscript.appendChild(iframe);
+        document.body.insertBefore(noscript, document.body.firstChild);
+    }
 }
 
 // Function to include the footer
@@ -74,8 +80,15 @@ function loadAnalytics() {
 }
 
 // Call the functions when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        includeGTM();
+        includeFooter();
+        loadAnalytics();
+    });
+} else {
+    // In case the document is already loaded
     includeGTM();
     includeFooter();
     loadAnalytics();
-});
+}
