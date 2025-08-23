@@ -2,10 +2,175 @@
 	
 	"use strict";
 
+	// ===== ENHANCED ANIMATIONS AND INTERACTIONS =====
+
+	// Typing Animation for Main Headline
+	function initTypingAnimation() {
+		const headline = document.querySelector('.typing-animation');
+		if (headline) {
+			const text = headline.innerHTML;
+			headline.innerHTML = '';
+			headline.style.borderRight = '2px solid #fc7303';
+			
+			let i = 0;
+			function typeWriter() {
+				if (i < text.length) {
+					headline.innerHTML = text.slice(0, i + 1);
+					i++;
+					setTimeout(typeWriter, 50);
+				}
+			}
+			
+			// Start typing after a delay
+			setTimeout(typeWriter, 1000);
+		}
+	}
+
+	// Parallax Effect
+	function initParallaxEffect() {
+		$(window).scroll(function() {
+			const scrolled = $(window).scrollTop();
+			const rate = scrolled * -0.5;
+			$('.main-banner::before').css('transform', 'translateY(' + rate + 'px)');
+		});
+	}
+
+	// Intersection Observer for Section Animations
+	function initScrollAnimations() {
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver(function(entries) {
+			entries.forEach(function(entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animated');
+				}
+			});
+		}, observerOptions);
+
+		// Observe all sections
+		document.querySelectorAll('.section').forEach(function(section) {
+			observer.observe(section);
+		});
+	}
+
+	// Enhanced Service Item Interactions
+	function initServiceAnimations() {
+		$('.service-item').each(function(index) {
+			$(this).css('animation-delay', (index * 0.1) + 's');
+		});
+
+		$('.service-item').hover(
+			function() {
+				$(this).addClass('pulse-animation');
+			},
+			function() {
+				$(this).removeClass('pulse-animation');
+			}
+		);
+	}
+
+	// Skill Bar Progress Animation
+	function animateSkillBars() {
+		$('.skill-slide').each(function() {
+			const $this = $(this);
+			const $fill = $this.find('.fill');
+			const skillLevel = $this.hasClass('marketing') ? '95%' : 
+							 $this.hasClass('digital') ? '88%' : '92%';
+			
+			$fill.css({
+				'width': skillLevel,
+				'transition': 'width 2s ease-in-out'
+			});
+		});
+	}
+
+	// Enhanced Button Hover Effects
+	function initButtonAnimations() {
+		$('.main-button, .second-button').hover(
+			function() {
+				$(this).addClass('float-animation');
+			},
+			function() {
+				$(this).removeClass('float-animation');
+			}
+		);
+	}
+
+	// Smooth Number Counter Animation
+	function initCounterAnimation() {
+		$('.counter').each(function() {
+			const $this = $(this);
+			const countTo = $this.attr('data-count');
+			
+			$({ countNum: $this.text() }).animate({
+				countNum: countTo
+			}, {
+				duration: 2000,
+				easing: 'linear',
+				step: function() {
+					$this.text(Math.floor(this.countNum));
+				},
+				complete: function() {
+					$this.text(this.countNum);
+				}
+			});
+		});
+	}
+
+	// Enhanced Mouse Cursor Effect
+	function initCursorEffect() {
+		if (window.innerWidth > 768) {
+			const cursor = $('<div class="custom-cursor"></div>');
+			$('body').append(cursor);
+			
+			$(document).mousemove(function(e) {
+				cursor.css({
+					left: e.clientX + 'px',
+					top: e.clientY + 'px'
+				});
+			});
+
+			$('a, button, .service-item, .owl-features .item').hover(
+				function() {
+					cursor.addClass('cursor-hover');
+				},
+				function() {
+					cursor.removeClass('cursor-hover');
+				}
+			);
+		}
+	}
+
 	// Page loading animation
 	$(window).on('load', function() {
 
         $('#js-preloader').addClass('loaded');
+        
+        // Initialize all custom animations
+        initTypingAnimation();
+        initScrollAnimations();
+        initServiceAnimations();
+        initButtonAnimations();
+        initParallaxEffect();
+        initCursorEffect();
+        
+        // Animate skill bars when they come into view
+        const skillsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        const skillsSection = document.querySelector('.skills');
+        if (skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
 
     });
 
