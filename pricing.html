@@ -56,11 +56,12 @@
         font-weight: normal;
         color: #666;
       }
-      .price.inr, .price.usd {
+      .price.gbp, .price.usd, .price.inr {
         display: none;
       }
-      .currency-inr .price.inr,
-      .currency-usd .price.usd {
+      .currency-gbp .price.gbp,
+      .currency-usd .price.usd,
+      .currency-inr .price.inr {
         display: block;
       }
       .privacy-content {
@@ -121,7 +122,7 @@
             <ul>
               <li><a href="#"><i class="fa fa-phone"></i>+91 9538351398</a></li>
               <li><a href="#"><i class="fa fa-envelope"></i>sales@map2map.com</a></li>
-              <li><a href="#"><i class="fa fa-map-marker"></i>Bangalore, India</a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i>London, UK</a></li>
             </ul>
           </div>
         </div>
@@ -196,8 +197,9 @@
 
   <div class="container">
     <div class="currency-toggler">
-      <button class="currency-btn active" data-currency="inr">INR (₹)</button>
+      <button class="currency-btn active" data-currency="gbp">GBP (£)</button>
       <button class="currency-btn" data-currency="usd">USD ($)</button>
+      <button class="currency-btn" data-currency="inr">INR (₹)</button>
     </div>
   </div>
 
@@ -205,14 +207,19 @@
     <!-- Starter -->
     <div class="pricing-card">
       <div class="package-name">Starter Package</div>
-      <div class="price inr">
-        <span style="text-decoration: line-through; font-size: 1rem;">₹1,999</span><br>
-        ₹999.50<br>
+      <div class="price gbp">
+        <span style="text-decoration: line-through; font-size: 1rem;">£18.99</span><br>
+        £9.50<br>
         <span style="color: green; font-size: 0.9rem;">50% OFF!</span>
       </div>
       <div class="price usd">
         <span style="text-decoration: line-through; font-size: 1rem;">$23.94</span><br>
         $11.97<br>
+        <span style="color: green; font-size: 0.9rem;">50% OFF!</span>
+      </div>
+      <div class="price inr">
+        <span style="text-decoration: line-through; font-size: 1rem;">₹1,999</span><br>
+        ₹999.50<br>
         <span style="color: green; font-size: 0.9rem;">50% OFF!</span>
       </div>
       <ul class="features">
@@ -280,8 +287,9 @@
     <!-- Mid-Tier -->
     <div class="pricing-card">
       <div class="package-name">Mid-Tier Package</div>
-      <div class="price inr"><span style="text-decoration: line-through;">₹3,499</span> ₹1,749.50<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+      <div class="price gbp"><span style="text-decoration: line-through;">£32.99</span> £16.50<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
       <div class="price usd"><span style="text-decoration: line-through;">$41.90</span> $20.95<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+      <div class="price inr"><span style="text-decoration: line-through;">₹3,499</span> ₹1,749.50<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
       <ul class="features">
         <li>All Starter Features</li>
         <li>Monthly GBP Posts — Publish 1–2 Google Posts per month (offers, events, updates)</li>
@@ -348,8 +356,9 @@
     <!-- Premium -->
     <div class="pricing-card" style="border: 2px solid var(--accent); box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
       <div class="package-name">Premium Package <span style="color: var(--accent); font-size: 0.9rem;">Most Popular</span></div>
-      <div class="price inr"><span style="text-decoration: line-through;">₹4,999</span> ₹2,499.50<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+      <div class="price gbp"><span style="text-decoration: line-through;">£47.99</span> £23.99<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
       <div class="price usd"><span style="text-decoration: line-through;">$59.87</span> $29.94<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+      <div class="price inr"><span style="text-decoration: line-through;">₹4,999</span> ₹2,499.50<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
       <ul class="features">
         <li>All Mid-Tier Features</li>
         <li>Weekly GBP Posts — Consistent updates to boost engagement and rankings</li>
@@ -419,8 +428,9 @@
     <div class="center-card">
       <div class="pricing-card">
         <div class="package-name">Update Service</div>
-        <div class="price inr"><span style="text-decoration: line-through;">5 updates for ₹450</span><br>Now: 5 updates for ₹225<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+        <div class="price gbp"><span style="text-decoration: line-through;">5 updates for £4.50</span><br>Now: 5 updates for £2.25<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
         <div class="price usd"><span style="text-decoration: line-through;">5 updates for $5.39</span><br>Now: 5 updates for $2.70<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
+        <div class="price inr"><span style="text-decoration: line-through;">5 updates for ₹450</span><br>Now: 5 updates for ₹225<br><span style="color: green; font-size: 0.9rem;">50% OFF!</span></div>
         <ul class="features">
           <li>Business Hours</li>
           <li>Phone Number</li>
@@ -488,7 +498,6 @@
   </div>
 
   <p class="highlight-text">LIMITED TIME: 50% OFF ALL PACKAGES!<br>
-  <small>Note: USD prices are approximate. Final amount may vary based on exchange rates at time of payment.</small></p>
   <p style="font-weight: bold; text-align: center;">100% Money-Back Guarantee if Not Satisfied Within 30 Days!</p>
 
   <div class="why-section">
@@ -530,7 +539,7 @@
         });
         
         // Update body class
-        document.body.classList.remove('currency-inr', 'currency-usd');
+        document.body.classList.remove('currency-gbp', 'currency-usd', 'currency-inr');
         document.body.classList.add('currency-' + currency);
       };
       
@@ -548,8 +557,10 @@
           const response = await fetch('https://ipapi.co/json/');
           const data = await response.json();
           
-          // If user is from India, set currency to INR, otherwise use USD
-          if (data.country === 'IN') {
+          // If user is from UK, set currency to GBP, if from India use INR, otherwise use USD
+          if (data.country === 'GB') {
+            setCurrency('gbp');
+          } else if (data.country === 'IN') {
             setCurrency('inr');
           } else {
             setCurrency('usd');
