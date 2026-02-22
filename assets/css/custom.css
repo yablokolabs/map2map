@@ -865,6 +865,10 @@ footer .footer-links li {
 
 /* Mobile styles */
 @media (max-width: 767px) {
+  .header-area .main-nav .nav li a::after {
+    display: none;
+  }
+
   footer .footer-content [class^="col-lg"] {
     flex: 0 0 100%;
     max-width: 100%;

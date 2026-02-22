@@ -677,7 +677,8 @@ Header Style
   .header-area {
     background: #f7f7f7;
     padding: 0px 15px;
-    height: 100px;
+    height: auto;
+    min-height: 100px;
     box-shadow: none;
     text-align: center;
   }
